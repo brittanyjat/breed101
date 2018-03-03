@@ -1,0 +1,11 @@
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (3, 'Loyal', 'Curious', 'Famously Funny');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (4, 'Independent', 'Silly', 'Sweet');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (5, 'Dignified', 'Courageous', 'Loyal');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (6, 'Affectionate', 'Loyal', 'Playful');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (7, 'Sweet', 'Mellow', 'Sociable');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (8, 'Playful', 'Perkey', 'Smart');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (9, 'Sweet-tempered', 'Easy-going', 'Independent');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (10, 'Friendly', 'Lovable', 'Inquisitive');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (11, 'Smart', 'Confident', 'Good-Natured');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (12, 'Alert', 'Curious', 'Pleasant');
+INSERT INTO traits (id, trait1, trait2, trait3) VALUES (13, 'Smart', 'Work-Oriented', 'Exuberant');
