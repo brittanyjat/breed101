@@ -3,10 +3,11 @@ id SERIAL PRIMARY KEY,
 name VARCHAR(25),
 photo VARCHAR(250),
 ceo VARCHAR(250),
+description VARCHAR(1500)
 )
 
 create table traits (
-id integer,
+id INTEGER,
 trait1 varchar(20),
 trait2 varchar(20),
 trait3 varchar(20),
@@ -14,38 +15,38 @@ FOREIGN KEY (id) REFERENCES breeds ( id )
 )
 
 CREATE TABLE genetics (
-id integer,
-weight INTEGER,
-height INTEGER,
-energy INTEGER,
+id INTEGER,
+weight NUMERIC,
+height NUMERIC,
+energy NUMERIC,
 lifeExpected VARCHAR(20),
-barking INTEGER,
+barking NUMERIC,
 FOREIGN KEY (id) REFERENCES breeds (id)
 )
 
 CREATE TABLE main (
 id INTEGER,
-intelligence INTEGER,
-playful INTEGER,
-affection INTEGER,
-train INTEGER,
+intelligence NUMERIC,
+playful NUMERIC,
+affection NUMERIC,
+train NUMERIC,
 FOREIGN KEY (id) REFERENCES breeds (id)
 )
 
 CREATE TABLE adaptability (
 id INTEGER,
-apartment INTEGER,
-cat INTEGER,
-dog INTEGER,
-child INTEGER,
+apartment NUMERIC,
+cat NUMERIC,
+dog NUMERIC,
+child NUMERIC,
 FOREIGN KEY (id) REFERENCES breeds (id)
 )
 
 CREATE TABLE needs (
-id INTEGER,
-exercise INTEGER,
-heath INTEGER,
-grooming INTEGER,
-shedding INTEGER,
+id NUMERIC,
+exercise NUMERIC,
+health NUMERIC,
+grooming NUMERIC,
+shedding NUMERIC,
 FOREIGN KEY (id) REFERENCES breeds (id)
 )

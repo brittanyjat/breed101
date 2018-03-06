@@ -1,37 +1,45 @@
 import React, { Component } from 'react';
-import VirtualizedSelect from 'react-virtualized-select';
 import axios from 'axios';
+import { withRouter } from 'react-router';
+import Select from 'react-select';
 
-import 'react-select/dist/react-select.css'
-import 'react-virtualized/styles.css'
-import 'react-virtualized-select/styles.css'
+import 'react-select/dist/react-select.css';
 
-export default class Search extends Component {
-    constructor(props){
+class Search extends Component {
+    constructor(props) {
         super(props);
 
         this.state = {
-            options: []
+            options: [],
+            selectedOption: ''
         }
+        this.handleChange = this.handleChange.bind(this)
     }
 
-    componentDidMount(){
+    handleChange(selectedOption) {
+        const { history } = this.props;
+        history.push(`/breed/${selectedOption.value}`)
+    }
+
+    componentDidMount() {
         axios.get('/api/breedList').then(res => {
-            this.setState({ options: res.data})
+            this.setState({ options: res.data })
         })
     }
 
-
     render() {
-        console.log(this.state)
+        const { selectedOption } = this.state;
         return (
             <div>
-                <VirtualizedSelect 
+                <Select
+                    name='breed-search'
+                    value={selectedOption.value}
                     options={this.state.options}
-                    onChange={(selectValue) => this.setState({ selectValue})}
-                    value={this.state.selectValue}
+                    onChange={this.handleChange}
                 />
             </div>
         )
     }
 }
+
+export default withRouter(Search);

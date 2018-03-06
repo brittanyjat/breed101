@@ -38,7 +38,6 @@ class Admin extends Component {
         axios.post('/api/new', body).then(res => {
             console.log(res)
         })
-        // this.props.clearState();
     }
 
     render() {
