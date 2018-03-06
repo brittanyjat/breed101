@@ -8,9 +8,12 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
 const breeds = require('./Controllers/breeds');
 
+app.use(bodyParser.json());
+
 
 
 app.get('/api/breedSearch', breeds.breedSearch);
+app.post('/api/new', breeds.new);
 
 
 massive(CONNECTION_STRING).then(db => {

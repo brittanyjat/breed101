@@ -17,14 +17,14 @@ id integer,
 weight INTEGER,
 height INTEGER,
 energy INTEGER,
-expected VARCHAR(20),
+lifeExpected VARCHAR(20),
 barking INTEGER,
 FOREIGN KEY (id) REFERENCES breeds (id)
 )
 
 CREATE TABLE main (
 id INTEGER,
-energy INTEGER,
+intelligence INTEGER,
 playful INTEGER,
 affection INTEGER,
 train INTEGER,
