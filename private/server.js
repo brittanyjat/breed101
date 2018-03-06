@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 
 
-app.get('/api/breedSearch', breeds.breedSearch);
+app.get('/api/breedList', breeds.breedList);
 app.post('/api/new', breeds.new);
 
 

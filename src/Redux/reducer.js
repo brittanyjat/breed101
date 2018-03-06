@@ -1,6 +1,9 @@
 const initialState = {
     name: '',
     photo: '',
+    ceo: '',
+    description: '',
+    
     trait1: '',
     trait2: '',
     trait3: '',
@@ -28,13 +31,16 @@ const initialState = {
 }
 
 const UPDATE = 'UPDATE';
-
+const CLEARSTATE = 'CLEARSTATE';
 
 function reducer(state = initialState, action) {
+    // console.log(state);
     const { payload } = action;
     switch (action.type) {
         case UPDATE:
-            return {...state, [payload.prop]: payload.value}
+            return { ...state, [payload.prop]: payload.value }
+        case CLEARSTATE:
+            return { ...state, initialState }
         default:
             return state
     }
@@ -44,11 +50,14 @@ function reducer(state = initialState, action) {
 export function update(prop, value) {
     return {
         type: UPDATE,
-        payload: {prop, value}
+        payload: { prop, value }
     }
 }
 
-
-
+export function clearState() {
+    return {
+        type: CLEARSTATE
+    }
+}
 
 export default reducer;

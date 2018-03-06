@@ -16,7 +16,7 @@ export default class Search extends Component {
     }
 
     componentDidMount(){
-        axios.get('/api/breedSearch').then(res => {
+        axios.get('/api/breedList').then(res => {
             this.setState({ options: res.data})
         })
     }

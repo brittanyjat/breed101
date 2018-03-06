@@ -1,7 +1,8 @@
 CREATE TABLE breeds (
 id SERIAL PRIMARY KEY,
 name VARCHAR(25),
-photo VARCHAR(250)
+photo VARCHAR(250),
+ceo VARCHAR(250),
 )
 
 create table traits (
