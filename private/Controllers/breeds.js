@@ -14,9 +14,9 @@ module.exports = {
             res.status(200).send('Success!')
         }).catch(err => console.log(err))
     },
-    hero: (req, res) => {
+    detail: (req, res) => {
         const db = req.app.get('db');
-        db.gets.hero(req.params.id).then(info => {
+        db.gets.breed_detail(req.params.id).then(info => {
             res.status(200).send(info[0])
         }).catch(err => console.log(err))
     }

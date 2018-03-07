@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class BreedDetail extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -10,23 +10,32 @@ export default class BreedDetail extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const { id } = this.props.match.params;
-        axios.get(`/api/hero/${id}`).then(res => {
-            this.setState({breed: res.data})
+        axios.get(`/api/breed/${id}`).then(res => {
+            this.setState({ breed: res.data })
         })
     }
 
-    render(){
+    render() {
         console.log(this.state.breed)
-        return(
+        var bgImg = {
+            backgroundImage: `url(${this.state.breed.photo})`
+        }
+        return (
             <div>
-                <div>
-                    <img src={this.state.breed.photo} alt='dog'/>
-                    <h1>{this.state.breed.name}</h1>
-                    <h2>{this.state.breed.trait1}</h2>
-                    <h2>{this.state.breed.trait2}</h2>
-                    <h2>{this.state.breed.trait3}</h2>
+                <div className='hero-section' style={bgImg}>
+                    <div className='meet-the'>
+                        <span>meet the</span>
+                    </div>
+                    <div>
+                        <h1>{this.state.breed.name}</h1>
+                    </div>
+                    <div className='hero-traits'>
+                        <span>{this.state.breed.trait1}</span>
+                        <span>{this.state.breed.trait2}</span>
+                        <span>{this.state.breed.trait3}</span>
+                    </div>
                 </div>
             </div>
         )

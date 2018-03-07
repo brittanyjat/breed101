@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Lobster|Rozha+One');
+
+.hero-section {
+    height: 110vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    h1 {
+        color: white;
+        font-size: 63px;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.hero-traits {
+    width: 65%;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    span {
+        color: white;
+        font-size: 36px;
+        font-family: 'Rozha One', serif;
+        // font-family: 'Lobster', cursive;
+        font-style: italic;
+        letter-spacing: 1px;
+        text-transform: lowercase;
+        text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+    }
+}
+
+.meet-the {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+}

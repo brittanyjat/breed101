@@ -33,4 +33,5 @@
 1. Changed breed controller when adding new breed. I was having a problem where if 1 field failed, it would still add to the database on all the other tables which made my data inconsistent. 
     - Consolidated all characteristic tables into one 'traits' table
     - Made one call in controller that adds breed name and photo to 'breeds' table, returning the id. Then using that id, all the info is added to the traits table. Very cool!!
-    
+2. Installed SASS.
+3. Started styling BreedDetail hero section but remember that I need to start mobile first! Will finish styling later.

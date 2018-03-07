@@ -3,7 +3,6 @@ import { Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { update, clearState } from '../../Redux/reducer';
 import axios from 'axios';
-import './admin.css';
 
 
 class Admin extends Component {

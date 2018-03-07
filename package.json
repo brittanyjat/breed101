@@ -8,6 +8,8 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "massive": "^4.7.0",
+    "node-sass-chokidar": "^1.1.0",
+    "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -19,10 +21,13 @@
     "semantic-ui-react": "^0.78.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start"
   },
   "main": "private/server.js",
   "proxy": "http://localhost:3003"
