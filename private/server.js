@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 app.get('/api/breedList', breeds.breedList);
 app.post('/api/new', breeds.new);
+app.get('/api/hero/:id', breeds.hero);
 
 
 massive(CONNECTION_STRING).then(db => {
