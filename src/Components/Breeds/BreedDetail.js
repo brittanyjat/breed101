@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import BreedVideo from './BreedVideo';
 
 export default class BreedDetail extends Component {
     constructor(props) {
@@ -25,22 +26,32 @@ export default class BreedDetail extends Component {
         }
         return (
             <div>
-                <div className='hero-section' style={bgImg}>
-                    <div className='meet-the'>
-                        <span>meet the</span>
-                    </div>
-                    <div>
-                        <h1>{breed.name}</h1>
-                    </div>
-                    <div className='hero-traits'>
-                        <span>{breed.trait1}</span>
-                        <span>{breed.trait2}</span>
-                        <span>{breed.trait3}</span>
+                <div className='breed-top-section'>
+                    <div className='hero-section' style={bgImg}>
+                        <div className='meet-the'>
+                            <span>meet the</span>
+                        </div>
+                        <div>
+                            <h1>{breed.name}</h1>
+                        </div>
+                        <div className='hero-traits'>
+                            <span>{breed.trait1}</span>
+                            <span>{breed.trait2}</span>
+                            <span>{breed.trait3}</span>
+                        </div>
                     </div>
                 </div>
-                <div className='intro-section'>
-                    <h2>INTRODUCTION</h2>
-                    <p>{breed.description}</p>
+
+                <div className='breed-bottom-section'>
+                    <div className='intro-section'>
+                        <h2>INTRODUCTION</h2>
+                        <p>{breed.description}</p>
+                    </div>
+
+
+                    <div>
+                        <BreedVideo vid={breed.youtube} />
+                    </div>
                 </div>
             </div>
         )

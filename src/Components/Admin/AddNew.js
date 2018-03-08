@@ -13,6 +13,7 @@ class Admin extends Component {
             photo: this.props.photo,
             ceo: this.props.ceo,
             description: this.props.description,
+            hypoallergenic: this.props.hypoallergenic,
             trait1: this.props.trait1,
             trait2: this.props.trait2,
             trait3: this.props.trait3,
@@ -39,6 +40,7 @@ class Admin extends Component {
         })
     }
 
+
     render() {
         const { update } = this.props;
 
@@ -53,7 +55,12 @@ class Admin extends Component {
         }
         return (
             <div style={styles}>
-                <div><img src={this.props.photo} alt='preview' style={imgStyle} /></div>
+                <div>
+                    <img src={this.props.photo} alt='preview' style={imgStyle} />
+                    <Button type='submit' onClick={() => this.submitBreed()} >Submit</Button>
+                    {/* <Button type='submit' onClick={() => this.updateBreed(this.props.match.params.id)}>Update</Button> */}
+                </div>
+
                 <div>
                     <Form className='all-forms'>
                         <div>
@@ -76,6 +83,16 @@ class Admin extends Component {
                             <Form.Field>
                                 <label>Description</label>
                                 <input placeholder='Description' onChange={(e) => update('description', e.target.value)} />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <label>HypoAllergenic</label>
+                                <input placeholder='HypoAllergenic' onChange={(e) => update('hypoallergenic', e.target.value)} />
+                            </Form.Field>
+
+                            <Form.Field>
+                                <label>YouTube URL</label>
+                                <input placeholder='YouTube URL' onChange={(e) => update('youtube', e.target.value)} />
                             </Form.Field>
                         </div>
 
@@ -194,8 +211,6 @@ class Admin extends Component {
                             </Form.Field>
                         </div>
 
-
-                        <Button type='submit' onClick={() => this.submitBreed()} >Submit</Button>
                     </Form>
                 </div>
             </div>
@@ -208,6 +223,7 @@ var mapStateToProps = (state) => {
         photo: state.photo,
         ceo: state.ceo,
         description: state.description,
+        hypoallergenic: state.hypoallergenic,
         trait1: state.trait1,
         trait2: state.trait2,
         trait3: state.trait3,

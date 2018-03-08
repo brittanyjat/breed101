@@ -45,3 +45,7 @@
 3. Discovered something AWESOME with postgresql.
     - Added cascading feature on traits table so that when I delete an id from the breeds table, it is automatically deleted on traits table!!!
 4. Delete button on admin page now functional!
+5. Started working on update. **Need to finish** 
+6. Added youtube player to breed detail page.
+    - also added column in trait table for breed specific youtube id
+7. Styled introduction and video portion of breed detail component, with media queries.

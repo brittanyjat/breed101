@@ -17,6 +17,7 @@ app.post('/api/new', breeds.new);
 app.get('/api/breed/:id', breeds.detail);
 app.delete('/api/breed/:id', breeds.delete);
 app.get('/api/all', breeds.all);
+app.put('/api/breed/:id', breeds.update);
 
 
 massive(CONNECTION_STRING).then(db => {

@@ -15,7 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/breed/:id' component={BreedDetails} />
-            <Route path='/add' component={AddNew} />
+            <Route path='/add/:id' component={AddNew} />
             <Route path='/admin' component={AdminHome} />
           </Switch>
         </BrowserRouter>

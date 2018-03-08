@@ -7,9 +7,9 @@ module.exports = {
     },
     new: (req, res) => {
         const db = req.app.get('db');
-        const { name, photo, ceo, description, trait1, trait2, trait3, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding } = req.body;
+        const { name, photo, ceo, description, trait1, trait2, trait3, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding, hypoallergenic } = req.body;
 
-        db.add.add_breed([name, photo, ceo, trait1, trait2, trait3, description, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding])
+        db.add.add_breed([name, photo, ceo, trait1, trait2, trait3, description, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding, hypoallergenic])
             .then(response => {
                 res.status(200).send('Success!')
             }).catch(err => console.log(err))
@@ -34,5 +34,11 @@ module.exports = {
                 res.status(200).send(newBreedList)
             })
         }).catch(err => res.status(500).send(err))
+    },
+    update: (req, res) => {
+        const db = req.app.get('db');
+        const { id } = req.params;
+        // const { name, photo, ceo, description, trait1, trait2, trait3, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding, hypoallergenic } = req.body;
+        console.log(req.body, req.params)
     }
 }

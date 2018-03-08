@@ -5,6 +5,8 @@ const initialState = {
     photo: '',
     ceo: '',
     description: '',
+    hypoallergenic: false,
+    youtube: '',
 
     trait1: '',
     trait2: '',

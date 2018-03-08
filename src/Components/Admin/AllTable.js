@@ -19,18 +19,18 @@ class AllTable extends Component {
     }
 
     render() {
-        const {deleteBreed, breedList, selected } = this.props;
+        const { deleteBreed, breedList, selected, history } = this.props;
         const breedTable = breedList.map((breed, i) => {
             return (
                 <Table.Row key={i}>
                     <Table.Cell collapsing>
-                        <Checkbox slider 
-                            onChange={() => this.handleSelect(breed.id)} 
-                            checked={selected === breed.id}
-                        />
+                        <Checkbox slider
+                            onChange={() => this.handleSelect(breed.id)}
+                            checked={selected === breed.id} />
                     </Table.Cell>
                     <Table.Cell>{breed.id}</Table.Cell>
                     <Table.Cell>{breed.name}</Table.Cell>
+                    <Table.Cell>{breed.spotlight.toString()}</Table.Cell>
                 </Table.Row>
             )
         })
@@ -44,6 +44,7 @@ class AllTable extends Component {
                                 <Table.HeaderCell />
                                 <Table.HeaderCell>ID</Table.HeaderCell>
                                 <Table.HeaderCell>Name</Table.HeaderCell>
+                                <Table.HeaderCell>Spotlight</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
 
@@ -55,10 +56,10 @@ class AllTable extends Component {
                             <Table.Row>
                                 <Table.HeaderCell />
                                 <Table.HeaderCell colSpan='4'>
-                                    <Button floated='right' icon labelPosition='left' primary size='small' onClick={() => this.props.history.push('/add')}>
+                                    <Button floated='right' icon labelPosition='left' primary size='small' onClick={() => history.push(`/add/${0}`)}>
                                         <Icon name='paw' /> Add New Breed
                                     </Button>
-                                    <Button size='small' color='olive'>Update</Button>
+                                    <Button size='small' color='olive' onClick={() => history.push(`/add/${selected}`)}>Update</Button>
                                     <Button size='small' color='red' onClick={() => deleteBreed(selected)}>Delete</Button>
                                 </Table.HeaderCell>
                             </Table.Row>
