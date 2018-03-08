@@ -1,0 +1,1 @@
+DELETE FROM breeds WHERE id = $1;

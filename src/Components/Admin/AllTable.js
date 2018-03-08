@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Checkbox, Button, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import { getAll, updateSelected } from '../../Redux/reducer';
+import { getAll, updateSelected, deleteBreed } from '../../Redux/reducer';
 import axios from 'axios';
 import { withRouter } from 'react-router';
 
@@ -19,18 +19,22 @@ class AllTable extends Component {
     }
 
     render() {
-        console.log(this.props.selected)
-        const breedTable = this.props.breedList.map((breed, i) => {
+        const {deleteBreed, breedList, selected } = this.props;
+        const breedTable = breedList.map((breed, i) => {
             return (
                 <Table.Row key={i}>
                     <Table.Cell collapsing>
-                        <Checkbox slider onChange={() => this.handleSelect(breed.id)} />
+                        <Checkbox slider 
+                            onChange={() => this.handleSelect(breed.id)} 
+                            checked={selected === breed.id}
+                        />
                     </Table.Cell>
                     <Table.Cell>{breed.id}</Table.Cell>
                     <Table.Cell>{breed.name}</Table.Cell>
                 </Table.Row>
             )
         })
+
         return (
             <div className='breed-table-container'>
                 <div>
@@ -55,7 +59,7 @@ class AllTable extends Component {
                                         <Icon name='paw' /> Add New Breed
                                     </Button>
                                     <Button size='small' color='olive'>Update</Button>
-                                    <Button size='small' color='red'>Delete</Button>
+                                    <Button size='small' color='red' onClick={() => deleteBreed(selected)}>Delete</Button>
                                 </Table.HeaderCell>
                             </Table.Row>
                         </Table.Footer>
@@ -73,4 +77,4 @@ var mapStateToProps = (state) => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, { getAll, updateSelected })(AllTable));
+export default withRouter(connect(mapStateToProps, { getAll, updateSelected, deleteBreed })(AllTable));

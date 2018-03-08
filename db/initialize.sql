@@ -5,7 +5,7 @@ photo VARCHAR(250)
 )
 
 create table traits (
-id INTEGER,
+id INTEGER REFERENCES breeds ON DELETE CASCADE,
 ceo VARCHAR(250),
 trait1 varchar(20),
 trait2 varchar(20),
@@ -28,5 +28,7 @@ exercise NUMERIC,
 health NUMERIC,
 grooming NUMERIC,
 shedding NUMERIC,
+spotlight BOOLEAN DEFAULT FALSE,
+hypoallergenic BOOLEAN DEFAULT FALSE,
 FOREIGN KEY (id) REFERENCES breeds (id)
 )

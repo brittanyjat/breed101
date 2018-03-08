@@ -19,8 +19,9 @@ export default class BreedDetail extends Component {
 
     render() {
         console.log(this.state.breed)
+        const { breed } = this.state;
         var bgImg = {
-            backgroundImage: `url(${this.state.breed.photo})`
+            backgroundImage: `url(${breed.photo})`
         }
         return (
             <div>
@@ -29,13 +30,17 @@ export default class BreedDetail extends Component {
                         <span>meet the</span>
                     </div>
                     <div>
-                        <h1>{this.state.breed.name}</h1>
+                        <h1>{breed.name}</h1>
                     </div>
                     <div className='hero-traits'>
-                        <span>{this.state.breed.trait1}</span>
-                        <span>{this.state.breed.trait2}</span>
-                        <span>{this.state.breed.trait3}</span>
+                        <span>{breed.trait1}</span>
+                        <span>{breed.trait2}</span>
+                        <span>{breed.trait3}</span>
                     </div>
+                </div>
+                <div className='intro-section'>
+                    <h2>INTRODUCTION</h2>
+                    <p>{breed.description}</p>
                 </div>
             </div>
         )

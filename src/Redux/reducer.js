@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const initialState = {
     name: '',
     photo: '',
@@ -37,6 +39,8 @@ const UPDATE = 'UPDATE';
 const CLEARSTATE = 'CLEARSTATE';
 const GETBREEDS = 'GETBREEDS';
 const UPDATESELECTED = 'UPDATESELECTED';
+const DELETE_BREED = 'DELETE_BREED';
+const _FULFILLED = '_FULFILLED';
 
 function reducer(state = initialState, action) {
     // console.log(state);
@@ -49,7 +53,9 @@ function reducer(state = initialState, action) {
         case GETBREEDS:
             return Object.assign({}, state, { breedList: payload })
         case UPDATESELECTED:
-            return {...state, selected: payload}
+            return { ...state, selected: payload }
+        case DELETE_BREED + _FULFILLED:
+            return { ...state, breedList: payload }
         default:
             return state
     }
@@ -76,10 +82,19 @@ export function getAll(breeds) {
     }
 }
 
-export function updateSelected(id){
+export function updateSelected(id) {
     return {
         type: UPDATESELECTED,
         payload: id
+    }
+}
+
+export function deleteBreed(id) {
+    const promise = axios.delete(`/api/breed/${id}`).then(res => res.data);
+
+    return {
+        type: DELETE_BREED,
+        payload: promise
     }
 }
 

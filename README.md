@@ -43,4 +43,5 @@
     -Hypoallergenic. Realized this is one of the most important characteristics for some people to know!
     - Spotlight. If I have time to do this feature, I will be able to toggle which breeds are highlighted on the home page!
 3. Discovered something AWESOME with postgresql.
-    - Added cascading feature on traits table so that when I delete an id from the breeds table, it is automatically deleted on traits table!!! 
+    - Added cascading feature on traits table so that when I delete an id from the breeds table, it is automatically deleted on traits table!!!
+4. Delete button on admin page now functional!
