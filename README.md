@@ -35,3 +35,12 @@
     - Made one call in controller that adds breed name and photo to 'breeds' table, returning the id. Then using that id, all the info is added to the traits table. Very cool!!
 2. Installed SASS.
 3. Started styling BreedDetail hero section but remember that I need to start mobile first! Will finish styling later.
+----
+
+####March 8, 2018
+1. Changed from material ui to semantic ui table to display breeds. Material UI was giving me grief when trying to select a row.
+2. Added 2 columns to traits table
+    -Hypoallergenic. Realized this is one of the most important characteristics for some people to know!
+    - Spotlight. If I have time to do this feature, I will be able to toggle which breeds are highlighted on the home page!
+3. Discovered something AWESOME with postgresql.
+    - Added cascading feature on traits table so that when I delete an id from the breeds table, it is automatically deleted on traits table!!! 

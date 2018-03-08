@@ -19,5 +19,11 @@ module.exports = {
         db.gets.breed_detail(req.params.id).then(info => {
             res.status(200).send(info[0])
         }).catch(err => console.log(err))
+    },
+    all: (req, res) => {
+        const db = req.app.get('db');
+        db.gets.all().then(breeds => {
+            res.status(200).send(breeds)
+        }).catch(err => res.status(500).send(err))
     }
 }

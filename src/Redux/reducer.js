@@ -3,7 +3,7 @@ const initialState = {
     photo: '',
     ceo: '',
     description: '',
-    
+
     trait1: '',
     trait2: '',
     trait3: '',
@@ -27,11 +27,16 @@ const initialState = {
     exercise: null,
     health: null,
     grooming: null,
-    shedding: null
+    shedding: null,
+
+    breedList: [],
+    selected: null
 }
 
 const UPDATE = 'UPDATE';
 const CLEARSTATE = 'CLEARSTATE';
+const GETBREEDS = 'GETBREEDS';
+const UPDATESELECTED = 'UPDATESELECTED';
 
 function reducer(state = initialState, action) {
     // console.log(state);
@@ -41,6 +46,10 @@ function reducer(state = initialState, action) {
             return { ...state, [payload.prop]: payload.value }
         case CLEARSTATE:
             return { ...state, initialState }
+        case GETBREEDS:
+            return Object.assign({}, state, { breedList: payload })
+        case UPDATESELECTED:
+            return {...state, selected: payload}
         default:
             return state
     }
@@ -57,6 +66,20 @@ export function update(prop, value) {
 export function clearState() {
     return {
         type: CLEARSTATE
+    }
+}
+
+export function getAll(breeds) {
+    return {
+        type: GETBREEDS,
+        payload: breeds
+    }
+}
+
+export function updateSelected(id){
+    return {
+        type: UPDATESELECTED,
+        payload: id
     }
 }
 

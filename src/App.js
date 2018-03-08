@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import BreedDetails from './Components/Breeds/BreedDetail';
 import Home from './Components/Home/Home';
 import AddNew from './Components/Admin/AddNew';
+import AdminHome from './Components/Admin/AdminHome';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/breed/:id' component={BreedDetails} />
             <Route path='/add' component={AddNew} />
+            <Route path='/admin' component={AdminHome} />
           </Switch>
         </BrowserRouter>
       </div>
