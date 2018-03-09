@@ -248,5 +248,3 @@ var mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { update, clearState })(Admin);
-
-// 9786 South 500 West 6:30 Thursday 

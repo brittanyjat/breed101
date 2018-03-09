@@ -34,7 +34,9 @@ const initialState = {
     shedding: null,
 
     breedList: [],
-    selected: null
+    selected: null,
+    currentBreed: [],
+    loading: false
 }
 
 const UPDATE = 'UPDATE';
@@ -42,7 +44,9 @@ const CLEARSTATE = 'CLEARSTATE';
 const GETBREEDS = 'GETBREEDS';
 const UPDATESELECTED = 'UPDATESELECTED';
 const DELETE_BREED = 'DELETE_BREED';
+const CURRENT_BREED = 'CURRENT_BREED';
 const _FULFILLED = '_FULFILLED';
+const _PENDING = 'PENDING';
 
 function reducer(state = initialState, action) {
     // console.log(state);
@@ -58,6 +62,10 @@ function reducer(state = initialState, action) {
             return { ...state, selected: payload }
         case DELETE_BREED + _FULFILLED:
             return { ...state, breedList: payload }
+        case CURRENT_BREED + _PENDING:
+            return { ...state, loading: true }
+        case CURRENT_BREED + _FULFILLED:
+            return { ...state, currentBreed: payload }
         default:
             return state
     }
@@ -96,6 +104,15 @@ export function deleteBreed(id) {
 
     return {
         type: DELETE_BREED,
+        payload: promise
+    }
+}
+
+export function breedDetail(id) {
+    const promise = axios.get(`/api/breed/${id}`).then(res => res.data);
+
+    return {
+        type: CURRENT_BREED,
         payload: promise
     }
 }

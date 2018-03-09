@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import BreedVideo from './BreedVideo';
+import Needs from './Needs';
+import { connect } from 'react-redux';
+import { breedDetail } from '../../Redux/reducer';
+import Adaptability from './Adaptability';
 
-export default class BreedDetail extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            breed: []
-        }
-    }
+class BreedDetail extends Component {
 
     componentDidMount() {
         const { id } = this.props.match.params;
-        axios.get(`/api/breed/${id}`).then(res => {
-            this.setState({ breed: res.data })
-        })
+        this.props.breedDetail(id)
     }
 
     render() {
-        console.log(this.state.breed)
-        const { breed } = this.state;
+        // console.log(this.props)
+        var breed = this.props.currentBreed;
         var bgImg = {
             backgroundImage: `url(${breed.photo})`
         }
@@ -28,9 +24,6 @@ export default class BreedDetail extends Component {
             <div>
                 <div className='breed-top-section'>
                     <div className='hero-section' style={bgImg}>
-                        <div className='meet-the'>
-                            <span>meet the</span>
-                        </div>
                         <div>
                             <h1>{breed.name}</h1>
                         </div>
@@ -46,14 +39,28 @@ export default class BreedDetail extends Component {
                     <div className='intro-section'>
                         <h2>INTRODUCTION</h2>
                         <p>{breed.description}</p>
+                        <br /><hr />
                     </div>
 
+                    <div className='breed-video-main'>
+                        <h3>{breed.name} Videos</h3>
+                        <BreedVideo vid={breed.youtube} />
+                    </div>
 
                     <div>
-                        <BreedVideo vid={breed.youtube} />
+                        <Needs />
+                        <Adaptability />
                     </div>
                 </div>
             </div>
         )
     }
 }
+
+var mapStateToProps = (state) => {
+    return {
+        currentBreed: state.currentBreed
+    }
+}
+
+export default connect(mapStateToProps, { breedDetail })(BreedDetail);

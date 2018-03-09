@@ -37,7 +37,7 @@
 3. Started styling BreedDetail hero section but remember that I need to start mobile first! Will finish styling later.
 ----
 
-####March 8, 2018
+#### March 8, 2018
 1. Changed from material ui to semantic ui table to display breeds. Material UI was giving me grief when trying to select a row.
 2. Added 2 columns to traits table
     -Hypoallergenic. Realized this is one of the most important characteristics for some people to know!
@@ -49,3 +49,8 @@
 6. Added youtube player to breed detail page.
     - also added column in trait table for breed specific youtube id
 7. Styled introduction and video portion of breed detail component, with media queries.
+---
+
+#### March 9, 2018
+1. Moved axios get call on BreedDetail component to Redux to allow progress bar components access to currentBreed state.
+2. Started styling Progress bar Components.
