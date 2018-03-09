@@ -19,6 +19,10 @@
         letter-spacing: 6px;
         background-color: rgba(0, 0, 0, 0.5);
     }
+    h1, span {
+        position: relative;
+        top: 150px;
+    }
 }
 
 .hero-traits {
@@ -91,6 +95,9 @@
 .tab-container {
     width: 90%;
     margin: auto;
+    h2 {
+        text-align: center;
+    }
 }
 
 @media (min-width: 760px){

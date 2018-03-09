@@ -39,7 +39,7 @@ class Tabs extends Component {
                     <Progress percent={grooming || 0} color='green' progress />
                     <h3>Shedding Level</h3>
                     <Progress percent={shedding || 0} color='green' progress />
-                    <h3>Health Issues</h3>
+                    <h3>General Health</h3>
                     <Progress percent={health || 0} color='green' progress />
                 </Tab.Pane> }
         ]

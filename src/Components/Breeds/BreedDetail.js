@@ -22,7 +22,7 @@ class BreedDetail extends Component {
                 <div className='breed-top-section'>
                     <div className='hero-section' style={bgImg}>
                         <div>
-                            <h1>{breed.name}</h1>
+                            <h1> {breed.name} </h1>
                         </div>
                         <div className='hero-traits'>
                             <span>{breed.trait1}</span>
@@ -45,6 +45,9 @@ class BreedDetail extends Component {
                     </div>
 
                     <div className='tab-container'>
+                        <hr />
+                        <h2>{breed.name} Attributes</h2>
+                        <hr />
                         <Tabs />
                     </div>
                 </div>
