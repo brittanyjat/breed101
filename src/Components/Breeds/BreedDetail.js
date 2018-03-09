@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 import BreedVideo from './BreedVideo';
-import Needs from './Needs';
 import { connect } from 'react-redux';
 import { breedDetail } from '../../Redux/reducer';
-import Adaptability from './Adaptability';
+import Tabs from './Tabs';
 
 
 class BreedDetail extends Component {
@@ -15,7 +13,6 @@ class BreedDetail extends Component {
     }
 
     render() {
-        // console.log(this.props)
         var breed = this.props.currentBreed;
         var bgImg = {
             backgroundImage: `url(${breed.photo})`
@@ -47,9 +44,8 @@ class BreedDetail extends Component {
                         <BreedVideo vid={breed.youtube} />
                     </div>
 
-                    <div>
-                        <Needs />
-                        <Adaptability />
+                    <div className='tab-container'>
+                        <Tabs />
                     </div>
                 </div>
             </div>

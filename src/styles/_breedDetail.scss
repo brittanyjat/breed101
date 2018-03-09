@@ -88,6 +88,11 @@
     }
 }
 
+.tab-container {
+    width: 90%;
+    margin: auto;
+}
+
 @media (min-width: 760px){
     .intro-section {
         margin-top: 40px;
@@ -106,7 +111,9 @@
     .breed-video-container {
         margin-top: -35px;
     }
-
+    .tab-container {
+        width: 65%;
+    }
 }
 
 @media (min-width: 1150px){
