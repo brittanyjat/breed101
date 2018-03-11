@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from '../Header/Search';
+import Header from '../Header/Header';
 import axios from 'axios';
 
 export default class Home extends Component {
@@ -21,7 +21,7 @@ export default class Home extends Component {
         // console.log(this.state.dogs)
         return (
             <div>
-                <Search />
+                <Header />
                 <div>
                     <img src={this.state.dogs.message} alt='random-dog' />
                 </div>

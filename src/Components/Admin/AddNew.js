@@ -243,7 +243,8 @@ var mapStateToProps = (state) => {
         exercise: state.exercise,
         health: state.health,
         grooming: state.grooming,
-        shedding: state.shedding
+        shedding: state.shedding,
+        youtube: state.youtube
     }
 }
 

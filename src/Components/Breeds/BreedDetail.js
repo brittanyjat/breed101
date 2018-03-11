@@ -3,6 +3,7 @@ import BreedVideo from './BreedVideo';
 import { connect } from 'react-redux';
 import { breedDetail } from '../../Redux/reducer';
 import Tabs from './Tabs';
+import Header from '../Header/Header';
 
 
 class BreedDetail extends Component {
@@ -19,10 +20,11 @@ class BreedDetail extends Component {
         }
         return (
             <div>
+                <Header />
                 <div className='breed-top-section'>
                     <div className='hero-section' style={bgImg}>
                         <div>
-                            <h1> {breed.name} </h1>
+                            <h1> {breed.name} </h1>
                         </div>
                         <div className='hero-traits'>
                             <span>{breed.trait1}</span>

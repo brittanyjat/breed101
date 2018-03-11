@@ -54,3 +54,12 @@
 #### March 9, 2018
 1. Moved axios get call on BreedDetail component to Redux to allow progress bar components access to currentBreed state.
 2. Started styling Progress bar Components.
+---
+
+#### March 10, 2018
+1. Designed logos for header and started styling
+---
+
+#### March 11, 2018
+1. Found cool library called react-window-size. It allows you to easily see the window size by 'this.props'
+2. Styled fullsize header.
