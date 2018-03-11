@@ -9,7 +9,10 @@ class Header extends Component {
         const { windowWidth } = this.props;
         return (
             <div >
-                {windowWidth > 700 ? <FullHeader /> : <MobileHeader/>}
+                {windowWidth > 700 ? <FullHeader /> : <MobileHeader />}
+                <div className='tagline'>
+                    <h5>Educating humans since 2018</h5>
+                </div>
             </div>
         )
     }

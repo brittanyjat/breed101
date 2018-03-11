@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router';
-import windowSize from 'react-window-size';
 import Select from 'react-select';
 
 import 'react-select/dist/react-select.css';
@@ -19,7 +18,8 @@ class Search extends Component {
 
     handleChange(selectedOption) {
         const { history } = this.props;
-        history.push(`/breed/${selectedOption.value}`)
+        history.replace(`/breed/${selectedOption.value}`)
+        history.go()
     }
 
     componentDidMount() {

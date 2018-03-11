@@ -19,10 +19,9 @@ class BreedDetail extends Component {
             backgroundImage: `url(${breed.photo})`
         }
         return (
-            <div>
+            <div id='breed-detail'>
                 <Header />
-                <div className='breed-top-section'>
-                    <div className='hero-section' style={bgImg}>
+                <div className='breed-top-section' style={bgImg}>
                         <div>
                             <h1> {breed.name} </h1>
                         </div>
@@ -32,7 +31,6 @@ class BreedDetail extends Component {
                             <span>{breed.trait3}</span>
                         </div>
                     </div>
-                </div>
 
                 <div className='breed-bottom-section'>
                     <div className='intro-section'>

@@ -22,9 +22,9 @@ export default class Home extends Component {
         return (
             <div>
                 <Header />
-                <div>
+                {/* <div>
                     <img src={this.state.dogs.message} alt='random-dog' />
-                </div>
+                </div> */}
             </div>
         )
     }

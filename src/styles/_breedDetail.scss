@@ -1,41 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Lobster|Rozha+One');
 
-.hero-section {
-    height: 110vh;
+.breed-top-section {
+    height: 50vh;
     width: 100vw;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
     h1 {
         color: white;
-        font-size: 63px;
+        font-size: 18px;
         text-transform: uppercase;
-        letter-spacing: 6px;
+        letter-spacing: 4px;
         background-color: rgba(0, 0, 0, 0.5);
     }
     h1, span {
         position: relative;
-        top: 150px;
+        top: 60px;
     }
 }
 
 .hero-traits {
     width: 65%;
-    margin-top: 25px;
+    margin-top: 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     span {
         color: white;
-        font-size: 36px;
+        font-size: 13px;
         font-family: 'Rozha One', serif;
-        // font-family: 'Lobster', cursive;
         font-style: italic;
         letter-spacing: 1px;
         text-transform: lowercase;
@@ -100,7 +98,7 @@
     }
 }
 
-@media (min-width: 760px){
+@media (min-width: 740px){
     .intro-section {
         margin-top: 40px;
         width: 55%;
@@ -121,10 +119,61 @@
     .tab-container {
         width: 65%;
     }
+    .breed-top-section {
+        height: 75vh;
+        h1, span {
+            top: 115px;
+        }
+        h1 {
+            font-size: 36px;
+            letter-spacing: 6px;
+       }
+    }
+    .hero-traits {
+        width: 65%;
+        margin-top: 8px;
+        span {
+            font-size: 24px;
+            margin-top: 8px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@media (min-width:900px){
+    .breed-top-section {
+        height: 110vh;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        h1 {
+            font-size: 48px;
+            letter-spacing: 6px;
+        }
+        h1, span {
+            top: 120px;
+        }
+    }   
 }
 
 @media (min-width: 1150px){
     .breed-video-container {
         margin-top: -125px;
     }
+    .breed-top-section {
+        h1 {
+            font-size: 63px;
+        }
+        h1, span {
+            top: 150px;
+        }
+    } 
+    .hero-traits {
+        width: 65%;
+        margin-top: 25px;
+    span {
+        font-size: 36px;
+        letter-spacing: 1px;
+        }
+    } 
 }
