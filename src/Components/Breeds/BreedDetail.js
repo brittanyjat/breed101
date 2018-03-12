@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import BreedVideo from './BreedVideo';
 import { connect } from 'react-redux';
-import { breedDetail } from '../../Redux/frontEndReducer';
+import { breedDetail } from '../../Redux/User';
 import Tabs from './Tabs';
-import Photos from './Photos';
+// import Photos from './Photos';
 import Header from '../Header/Header';
+import Photos from './Photos';
 
 class BreedDetail extends Component {
     constructor(){
@@ -58,8 +59,12 @@ class BreedDetail extends Component {
                         <Tabs />
                     </div>
 
-                    <div>
+                    <div className='photo-container'>
+                        <hr />
+                        <h2>{breed.name} Photos</h2>
+                        <hr />
                         <Photos />
+                        Cute dog photos will go here!
                     </div>
                 </div>
             </div>
@@ -69,7 +74,7 @@ class BreedDetail extends Component {
 
 var mapStateToProps = (state) => {
     return {
-        currentBreed: state.frontEndReducer.currentBreed
+        currentBreed: state.user.currentBreed
     }
 }
 

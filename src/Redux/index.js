@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import frontEndReducer from './frontEndReducer';
+import user from './User';
 import adminReducer from './adminReducer'
 
 export default combineReducers({
-  frontEndReducer,
+  user,
   adminReducer
 })

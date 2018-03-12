@@ -19,7 +19,7 @@ app.get('/api/breed/:id', breeds.detail);
 app.delete('/api/breed/:id', breeds.delete);
 app.get('/api/all', breeds.all);
 app.put('/api/breed/:id', breeds.update);
-app.get('/api/ceo', frontEnd.photos);
+app.get('/api/photos/:id', frontEnd.photos);
 
 
 

@@ -68,3 +68,7 @@
 
 #### March 12, 2018
 1. Created a second reducer and split 2 reducers between user and admin.
+2. Worked on Photos component
+    - Using req.params.id, made call to server to hit Dog CEO API.
+    - Got photos back for each breed and made simple carousel.
+        - need to style some more.
