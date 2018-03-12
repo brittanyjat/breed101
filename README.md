@@ -64,3 +64,7 @@
 1. Found cool library called react-window-size. It allows you to easily see the window size by 'this.props'
 2. Styled fullsize header.
 3. Re-styled breed detail hero section to be mobile responsive.
+---
+
+#### March 12, 2018
+1. Created a second reducer and split 2 reducers between user and admin.

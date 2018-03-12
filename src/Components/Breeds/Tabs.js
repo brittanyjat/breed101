@@ -57,18 +57,18 @@ class Tabs extends Component {
 
 var mapStateToProps = (state) => {
     return {
-        apartment: state.currentBreed.apartment,
-        dog: state.currentBreed.dog,
-        cat: state.currentBreed.cat,
-        child: state.currentBreed.child,
-        exercise: state.currentBreed.exercise,
-        shedding: state.currentBreed.shedding,
-        grooming: state.currentBreed.grooming,
-        health: state.currentBreed.health,
-        intelligence: state.currentBreed.intelligence,
-        barking: state.currentBreed.barking,
-        affection: state.currentBreed.affection,
-        playful: state.currentBreed.playful
+        apartment: state.frontEndReducer.currentBreed.apartment,
+        dog: state.frontEndReducer.currentBreed.dog,
+        cat: state.frontEndReducer.currentBreed.cat,
+        child: state.frontEndReducer.currentBreed.child,
+        exercise: state.frontEndReducer.currentBreed.exercise,
+        shedding: state.frontEndReducer.currentBreed.shedding,
+        grooming: state.frontEndReducer.currentBreed.grooming,
+        health: state.frontEndReducer.currentBreed.health,
+        intelligence: state.frontEndReducer.currentBreed.intelligence,
+        barking: state.frontEndReducer.currentBreed.barking,
+        affection: state.frontEndReducer.currentBreed.affection,
+        playful: state.frontEndReducer.currentBreed.playful
     }
 }
 

@@ -7,6 +7,7 @@ const express = require('express')
 const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
 const breeds = require('./Controllers/breeds');
+const frontEnd = require('./Controllers/frontEnd');
 
 app.use(bodyParser.json());
 
@@ -18,6 +19,8 @@ app.get('/api/breed/:id', breeds.detail);
 app.delete('/api/breed/:id', breeds.delete);
 app.get('/api/all', breeds.all);
 app.put('/api/breed/:id', breeds.update);
+app.get('/api/ceo', frontEnd.photos);
+
 
 
 massive(CONNECTION_STRING).then(db => {

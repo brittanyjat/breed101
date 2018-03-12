@@ -3,7 +3,7 @@ module.exports = {
         const db = req.app.get('db');
         db.gets.breed_list().then(breeds => {
             res.status(200).send(breeds)
-        }).catch(err => console.log(err))
+        }).catch(err => res.status(500).send(err))
     },
     new: (req, res) => {
         const db = req.app.get('db');
@@ -12,13 +12,13 @@ module.exports = {
         db.add.add_breed([name, photo, ceo, trait1, trait2, trait3, description, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding, hypoallergenic])
             .then(response => {
                 res.status(200).send('Success!')
-            }).catch(err => console.log(err))
+            }).catch(err => res.status(500).send(err))
     },
     detail: (req, res) => {
         const db = req.app.get('db');
         db.gets.breed_detail(req.params.id).then(info => {
             res.status(200).send(info[0])
-        }).catch(err => console.log(err))
+        }).catch(err => res.status(500).send(err))
     },
     all: (req, res) => {
         const db = req.app.get('db');

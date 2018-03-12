@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { update, clearState } from '../../Redux/reducer';
+import { update, clearState } from '../../Redux/adminReducer';
 import axios from 'axios';
 
 
@@ -219,32 +219,32 @@ class Admin extends Component {
 }
 var mapStateToProps = (state) => {
     return {
-        name: state.name,
-        photo: state.photo,
-        ceo: state.ceo,
-        description: state.description,
-        hypoallergenic: state.hypoallergenic,
-        trait1: state.trait1,
-        trait2: state.trait2,
-        trait3: state.trait3,
-        weight: state.weight,
-        height: state.height,
-        energy: state.energy,
-        expected: state.expected,
-        barking: state.barking,
-        intelligence: state.intelligence,
-        playful: state.playful,
-        affection: state.affection,
-        train: state.train,
-        apartment: state.apartment,
-        cat: state.cat,
-        dog: state.dog,
-        child: state.child,
-        exercise: state.exercise,
-        health: state.health,
-        grooming: state.grooming,
-        shedding: state.shedding,
-        youtube: state.youtube
+        name: state.adminReducer.name,
+        photo: state.adminReducer.photo,
+        ceo: state.adminReducer.ceo,
+        description: state.adminReducer.description,
+        hypoallergenic: state.adminReducer.hypoallergenic,
+        trait1: state.adminReducer.trait1,
+        trait2: state.adminReducer.trait2,
+        trait3: state.adminReducer.trait3,
+        weight: state.adminReducer.weight,
+        height: state.adminReducer.height,
+        energy: state.adminReducer.energy,
+        expected: state.adminReducer.expected,
+        barking: state.adminReducer.barking,
+        intelligence: state.adminReducer.intelligence,
+        playful: state.adminReducer.playful,
+        affection: state.adminReducer.affection,
+        train: state.adminReducer.train,
+        apartment: state.adminReducer.apartment,
+        cat: state.adminReducer.cat,
+        dog: state.adminReducer.dog,
+        child: state.adminReducer.child,
+        exercise: state.adminReducer.exercise,
+        health: state.adminReducer.health,
+        grooming: state.adminReducer.grooming,
+        shedding: state.adminReducer.shedding,
+        youtube: state.adminReducer.youtube
     }
 }
 

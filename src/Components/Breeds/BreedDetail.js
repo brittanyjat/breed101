@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import BreedVideo from './BreedVideo';
 import { connect } from 'react-redux';
-import { breedDetail } from '../../Redux/reducer';
+import { breedDetail } from '../../Redux/frontEndReducer';
 import Tabs from './Tabs';
+import Photos from './Photos';
 import Header from '../Header/Header';
 
-
 class BreedDetail extends Component {
+    constructor(){
+        super();
+
+        this.state = {
+            photos: []
+        }
+    }
 
     componentDidMount() {
         const { id } = this.props.match.params;
-        this.props.breedDetail(id)
+        this.props.breedDetail(id);
     }
 
     render() {
@@ -50,6 +57,10 @@ class BreedDetail extends Component {
                         <hr />
                         <Tabs />
                     </div>
+
+                    <div>
+                        <Photos />
+                    </div>
                 </div>
             </div>
         )
@@ -58,7 +69,7 @@ class BreedDetail extends Component {
 
 var mapStateToProps = (state) => {
     return {
-        currentBreed: state.currentBreed
+        currentBreed: state.frontEndReducer.currentBreed
     }
 }
 

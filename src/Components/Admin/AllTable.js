@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Checkbox, Button, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import { getAll, updateSelected, deleteBreed } from '../../Redux/reducer';
+import { getAll, updateSelected, deleteBreed } from '../../Redux/adminReducer';
 import axios from 'axios';
 import { withRouter } from 'react-router';
 
@@ -73,8 +73,8 @@ class AllTable extends Component {
 
 var mapStateToProps = (state) => {
     return {
-        selected: state.selected,
-        breedList: state.breedList
+        selected: state.adminReducer.selected,
+        breedList: state.adminReducer.breedList
     }
 }
 

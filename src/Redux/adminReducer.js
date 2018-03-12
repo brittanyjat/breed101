@@ -33,39 +33,30 @@ const initialState = {
     grooming: null,
     shedding: null,
 
-    breedList: [],
     selected: null,
-    currentBreed: [],
-    loading: false
+    breedList: []
 }
 
 const UPDATE = 'UPDATE';
 const CLEARSTATE = 'CLEARSTATE';
-const GETBREEDS = 'GETBREEDS';
 const UPDATESELECTED = 'UPDATESELECTED';
 const DELETE_BREED = 'DELETE_BREED';
-const CURRENT_BREED = 'CURRENT_BREED';
 const _FULFILLED = '_FULFILLED';
-const _PENDING = 'PENDING';
+const GETBREEDS = 'GETBREEDS';
 
-function reducer(state = initialState, action) {
-    // console.log(state);
+export default function adminReducer(state = initialState, action) {
     const { payload } = action;
     switch (action.type) {
+        case GETBREEDS:
+            return Object.assign({}, state, { breedList: payload })
         case UPDATE:
             return { ...state, [payload.prop]: payload.value }
         case CLEARSTATE:
             return { ...state, initialState }
-        case GETBREEDS:
-            return Object.assign({}, state, { breedList: payload })
         case UPDATESELECTED:
             return { ...state, selected: payload }
         case DELETE_BREED + _FULFILLED:
             return { ...state, breedList: payload }
-        case CURRENT_BREED + _PENDING:
-            return { ...state, loading: true }
-        case CURRENT_BREED + _FULFILLED:
-            return { ...state, currentBreed: payload }
         default:
             return state
     }
@@ -85,6 +76,15 @@ export function clearState() {
     }
 }
 
+export function deleteBreed(id) {
+    const promise = axios.delete(`/api/breed/${id}`).then(res => res.data);
+
+    return {
+        type: DELETE_BREED,
+        payload: promise
+    }
+}
+
 export function getAll(breeds) {
     return {
         type: GETBREEDS,
@@ -98,23 +98,3 @@ export function updateSelected(id) {
         payload: id
     }
 }
-
-export function deleteBreed(id) {
-    const promise = axios.delete(`/api/breed/${id}`).then(res => res.data);
-
-    return {
-        type: DELETE_BREED,
-        payload: promise
-    }
-}
-
-export function breedDetail(id) {
-    const promise = axios.get(`/api/breed/${id}`).then(res => res.data);
-
-    return {
-        type: CURRENT_BREED,
-        payload: promise
-    }
-}
-
-export default reducer;
