@@ -75,3 +75,7 @@
 3. Started styling home page.
     - Added GET_SPOTLIGHT to reducer which sends spotlighted breeds to homepage.
         - got those breeds coming back. Just need to style!
+---
+
+#### March 13, 2018
+1. Worked on Update for most of the day. It's almost functional.

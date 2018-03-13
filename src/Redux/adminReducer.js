@@ -34,7 +34,9 @@ const initialState = {
     shedding: null,
 
     selected: null,
-    breedList: []
+    breedList: [],
+    breedUpdate: [],
+    loading: false
 }
 
 const UPDATE = 'UPDATE';
@@ -43,6 +45,7 @@ const UPDATESELECTED = 'UPDATESELECTED';
 const DELETE_BREED = 'DELETE_BREED';
 const _FULFILLED = '_FULFILLED';
 const GETBREEDS = 'GETBREEDS';
+const BREED_UPDATE = 'BREED_UPDATE';
 
 export default function adminReducer(state = initialState, action) {
     const { payload } = action;
@@ -57,6 +60,10 @@ export default function adminReducer(state = initialState, action) {
             return { ...state, selected: payload }
         case DELETE_BREED + _FULFILLED:
             return { ...state, breedList: payload }
+        case BREED_UPDATE + '_PENDING':
+            return { ...state, loading: true }
+        case BREED_UPDATE + _FULFILLED:
+            return { ...state, breedUpdate: payload }
         default:
             return state
     }
@@ -96,5 +103,14 @@ export function updateSelected(id) {
     return {
         type: UPDATESELECTED,
         payload: id
+    }
+}
+
+export function updateBreed(id) {
+    const promise = axios.get(`/api/breed/${id}`).then(res => res.data);
+
+    return {
+        type: BREED_UPDATE,
+        payload: promise
     }
 }

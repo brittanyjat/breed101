@@ -58,7 +58,6 @@ class Admin extends Component {
                 <div>
                     <img src={this.props.photo} alt='preview' style={imgStyle} />
                     <Button type='submit' onClick={() => this.submitBreed()} >Submit</Button>
-                    {/* <Button type='submit' onClick={() => this.updateBreed(this.props.match.params.id)}>Update</Button> */}
                 </div>
 
                 <div>

@@ -38,7 +38,17 @@ module.exports = {
     update: (req, res) => {
         const db = req.app.get('db');
         const { id } = req.params;
-        // const { name, photo, ceo, description, trait1, trait2, trait3, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding, hypoallergenic } = req.body;
-        console.log(req.body, req.params)
+        var value = req.query.value;
+        var newValue = req.query.new;
+        console.log(value, newValue);
+        if (value == 'name' || 'photo') {
+            db.update_breed(id, value, newValue).then(response => {
+                res.status(200).send(response)
+            }).catch(err => console.log(err))
+        } else {
+            db.update_traits(id, value, newValue).then(response => {
+                res.status(200).send(response)
+            }).catch(err => console.log(err))
+        }
     }
 }

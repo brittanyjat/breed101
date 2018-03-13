@@ -6,6 +6,7 @@ import BreedDetails from './Components/Breeds/BreedDetail';
 import Home from './Components/Home/Home';
 import AddNew from './Components/Admin/AddNew';
 import AdminHome from './Components/Admin/AdminHome';
+import Update from './Components/Admin/Update';
 
 class App extends Component {
   render() {
@@ -15,8 +16,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/breed/:id' component={BreedDetails} />
-            <Route path='/add/:id' component={AddNew} />
-            <Route path='/admin' component={AdminHome} />
+            <Route path='/add' exact component={AddNew} />
+            <Route path='/admin' exact component={AdminHome} />
+            <Route path='/update/:id' component={Update} />
           </Switch>
         </BrowserRouter>
       </div>
