@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
+import Spotlight from './Spotlight';
+
 
 export default class Home extends Component {
 
@@ -31,9 +33,12 @@ export default class Home extends Component {
                     </div>
 
                 </div>
-                <hr width='75%'/>
+                <hr width='75%' />
+                <br />
+
                 <div className='home-spotlight'>
-                    <h1>Breeds Of The Month</h1>
+                    <h1>Breeds of the Month</h1>
+                    <Spotlight />
                 </div>
 
             </div>

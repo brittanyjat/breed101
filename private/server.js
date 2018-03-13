@@ -20,6 +20,7 @@ app.delete('/api/breed/:id', breeds.delete);
 app.get('/api/all', breeds.all);
 app.put('/api/breed/:id', breeds.update);
 app.get('/api/photos/:id', frontEnd.photos);
+app.get('/api/spotlight', frontEnd.spotlight);
 
 
 

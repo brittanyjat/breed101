@@ -73,3 +73,5 @@
     - Got photos back for each breed and made simple carousel.
         - need to style some more.
 3. Started styling home page.
+    - Added GET_SPOTLIGHT to reducer which sends spotlighted breeds to homepage.
+        - got those breeds coming back. Just need to style!
