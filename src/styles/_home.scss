@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+.home-top {
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-gap: 5px;
+    margin-bottom: 75px;
+    div {
+        width: 100%;
+        h2, h3 {
+            color: white;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+    }
+}
+
+.explore-link {
+    background-image: url('https://images.unsplash.com/photo-1505843378597-b96befae716e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fb08db6577ed6fa77c8e177f28051f0&auto=format&fit=crop&w=1950&q=80');
+}
+
+.first-link {
+    background-image: url('https://images.pexels.com/photos/65928/dog-nose-snout-munsterlander-65928.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+}
+
+.second-link {
+    background-image: url('https://images.pexels.com/photos/169524/pexels-photo-169524.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: opacity(80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2, h3 {
+        color: white;
+        text-transform: uppercase;
+        font-family: 'Lato', sans-serif;
+    }
+}
+
+.hero-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        font-size: 48px;
+        font-weight: 100;
+    }
+    h3 {
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: -2px;
+    }
+}
+
+.home-spotlight {
+    h1 {
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        font-size: 48px;
+    }
+}
+
+@media (min-width:768px){
+    .home-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 350px;
+        grid-gap: 5px;
+        }
+}

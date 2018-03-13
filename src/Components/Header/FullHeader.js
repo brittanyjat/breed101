@@ -12,12 +12,12 @@ export default function FullHeader() {
                     <img src={fullsize} alt='full-logo' className='full-logo' />
                 </div>
 
-                <ul>
+                <div className='links'>
                     <Link to='/'>Home</Link>
                     <li>Spotlight</li>
                     <li>About</li>
                     <li>Explore</li>
-                </ul>
+                </div>
 
                 <div className='selection'>
                     <Icon name='search' size='large' color='grey' />

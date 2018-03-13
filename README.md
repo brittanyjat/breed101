@@ -72,3 +72,4 @@
     - Using req.params.id, made call to server to hit Dog CEO API.
     - Got photos back for each breed and made simple carousel.
         - need to style some more.
+3. Started styling home page.

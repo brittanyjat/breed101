@@ -20,7 +20,7 @@ class Photos extends Component {
     }
 
     changeImg(i = 0) {
-        const { current, time } = this.state;
+        const { time } = this.state;
         const { photos } = this.props;
 
         this.setState({ current: photos[i] })
@@ -36,7 +36,7 @@ class Photos extends Component {
     render() {
         return (
             <div>
-                <img src={this.state.current} />
+                <img src={this.state.current} alt='breed' />
             </div>
         )
     }
