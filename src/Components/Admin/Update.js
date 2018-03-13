@@ -31,7 +31,7 @@ class Update extends Component {
 
     submitChange() {
         const { id } = this.props.match.params;
-        const { updateValue, newValue } = this.state
+        const { updateValue, newValue } = this.state;
         axios.put(`/api/breed/${id}?value=${updateValue}&new=${newValue}`).then(res => {
             console.log(res)
         })

@@ -60,9 +60,12 @@
 }
 
 .home-spotlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h1 {
         text-align: center;
-        font-size: 48px;
+        font-size: 32px;
     }
 }
 
@@ -72,6 +75,5 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 350px;
-        grid-gap: 5px;
         }
 }

@@ -40,15 +40,19 @@ module.exports = {
         const { id } = req.params;
         var value = req.query.value;
         var newValue = req.query.new;
-        console.log(value, newValue);
-        if (value == 'name' || 'photo') {
-            db.update_breed(id, value, newValue).then(response => {
-                res.status(200).send(response)
+        if (value === 'name') {
+            db.update_breed(id, newValue).then(response => {
+                res.status(200).send(`Successfully updated name to ${newValue}`)
+            }).catch(err => res.status(500).send(err))
+        } else if (value === 'photo') {
+            db.update_photo(id, newValue).then(response => {
+                res.status(200).send(`Successfully updated photo`)
             }).catch(err => console.log(err))
         } else {
             db.update_traits(id, value, newValue).then(response => {
-                res.status(200).send(response)
+                res.status(200).send(`Successfully Updated ${value} to ${newValue}`)
             }).catch(err => console.log(err))
         }
     }
 }
+

@@ -12,13 +12,20 @@ class Spotlight extends Component {
     render() {
         const spotlights = this.props.spotlight.map((dog, i) => {
             return (
-                <div key={i} style={{ backgroundImage: `url(${dog.photo})`, height: '200px' }}>
-                    <h3>{dog.name}</h3>
+                <div key={i}
+                    className='card'
+                    style={{ backgroundImage: `url(${dog.photo})`}}
+                    onClick={() => this.props.history.push(`/breed/${dog.id}`)}>
+
+                    <div className='spotlight-name'>
+                        <h4> {dog.name} </h4>
+                    </div>
+
                 </div>
             )
         })
         return (
-            <div>
+            <div className='main-card-container'>
                 {spotlights}
             </div>
         )
@@ -32,3 +39,6 @@ var mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { getSpotlight })(Spotlight);
+
+
+// style={{ backgroundImage: `url(${dog.photo})`, height: '200px' }}

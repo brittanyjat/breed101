@@ -1,3 +1,3 @@
 UPDATE breeds
-SET name = $2
+SET photo = $2
 WHERE id = $1;

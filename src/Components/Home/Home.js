@@ -38,7 +38,7 @@ export default class Home extends Component {
 
                 <div className='home-spotlight'>
                     <h1>Breeds of the Month</h1>
-                    <Spotlight />
+                    <Spotlight history={this.props.history} />
                 </div>
 
             </div>

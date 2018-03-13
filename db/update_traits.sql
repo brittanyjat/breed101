@@ -1,3 +1,3 @@
 UPDATE traits
 SET $2 = $3
-WHERE id = $1;
+where id = $1

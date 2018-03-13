@@ -79,3 +79,4 @@
 
 #### March 13, 2018
 1. Worked on Update for most of the day. It's almost functional.
+2. Styled spotlight section of homepage with media queries.
