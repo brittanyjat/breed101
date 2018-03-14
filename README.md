@@ -84,3 +84,4 @@
 
 #### March 14, 2018
 1. Created genetics table on breed detail page!
+2. Update finally working!

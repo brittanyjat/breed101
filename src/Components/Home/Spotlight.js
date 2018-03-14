@@ -13,8 +13,8 @@ class Spotlight extends Component {
     render() {
         const spotlights = this.props.spotlight.map((dog, i) => {
             return (
-                <Link to={`/breed/${dog.id}`}>
-                <div key={i}
+                <Link to={`/breed/${dog.id}`} key={i}>
+                <div
                     className='card'
                     style={{ backgroundImage: `url(${dog.photo})`}}>
 

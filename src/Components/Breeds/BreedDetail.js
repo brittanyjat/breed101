@@ -5,6 +5,7 @@ import Tabs from './Tabs';
 import Header from '../Header/Header';
 import Photos from './Photos';
 import Genetics from './Genetics';
+import windowSize from 'react-window-size';
 
 class BreedDetail extends Component {
     constructor(){
@@ -51,33 +52,40 @@ class BreedDetail extends Component {
                     <div className='intro-section'>
                         <h2>INTRODUCTION</h2>
                         <p>{breed.description}</p>
-                        <br /><hr />
-                    </div>
-
-                    <div className='breed-video-main'>
-                        <h3>{breed.name} Videos</h3>
-                        {/* <iframe width="420" height="315" title='detailed-info'
-                        src={`https://www.youtube.com/embed/${breed.youtube}`}>
-                    </iframe> */}
+                        <br />
                     </div>
 
                     <div className='tab-container'>
                         <hr />
                         <h2>{breed.name} Attributes</h2>
-                        <hr />
                         <Tabs />
                     </div>
 
-                    <div className='photo-container'>
-                        <hr />
-                        <h2>{breed.name} Photos</h2>
-                        <hr />
-                        {/* <Photos /> */}
+                    <div className='detail-container'>
+                        <h2>{breed.name} Genetics*</h2>
+                        <hr/>
+                        <br />
+                        <Genetics props={genetics}/>
+                        <h6>* based on median for breed</h6>
                     </div>
 
-                    <div>
-                        <Genetics props={genetics}/>
+                    <div className='detail-container'>
+                        <h2>{breed.name} Photos</h2>
+                        <hr />
+                        <Photos />
                     </div>
+
+                    <div className='detail-container'>
+                        <h2>{breed.name} Videos</h2>
+                        <hr/>
+                        <div className='video-wrapper'>
+                            <iframe
+                            title='detailed-info'
+                            src={`https://www.youtube.com/embed/${breed.youtube}`}>
+                            </iframe>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         )
@@ -90,4 +98,4 @@ var mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { breedDetail })(BreedDetail);
+export default windowSize(connect(mapStateToProps, { breedDetail })(BreedDetail));
