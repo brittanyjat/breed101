@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getSpotlight } from '../../Redux/User';
+import { Link } from 'react-router-dom';
 
 class Spotlight extends Component {
 
@@ -12,16 +13,17 @@ class Spotlight extends Component {
     render() {
         const spotlights = this.props.spotlight.map((dog, i) => {
             return (
+                <Link to={`/breed/${dog.id}`}>
                 <div key={i}
                     className='card'
-                    style={{ backgroundImage: `url(${dog.photo})`}}
-                    onClick={() => this.props.history.push(`/breed/${dog.id}`)}>
+                    style={{ backgroundImage: `url(${dog.photo})`}}>
 
                     <div className='spotlight-name'>
                         <h4> {dog.name} </h4>
                     </div>
 
                 </div>
+                </Link>
             )
         })
         return (

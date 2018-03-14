@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import BreedVideo from './BreedVideo';
 import { connect } from 'react-redux';
 import { breedDetail } from '../../Redux/User';
 import Tabs from './Tabs';
-// import Photos from './Photos';
 import Header from '../Header/Header';
 import Photos from './Photos';
+import Genetics from './Genetics';
 
 class BreedDetail extends Component {
     constructor(){
@@ -23,8 +22,16 @@ class BreedDetail extends Component {
 
     render() {
         var breed = this.props.currentBreed;
+        
         var bgImg = {
             backgroundImage: `url(${breed.photo})`
+        }
+        var genetics = {
+            energy: breed.energy,
+            expected: breed.expectancy,
+            height: breed.height,
+            weight: breed.weight,
+            bark: breed.barking
         }
         return (
             <div id='breed-detail'>
@@ -49,7 +56,9 @@ class BreedDetail extends Component {
 
                     <div className='breed-video-main'>
                         <h3>{breed.name} Videos</h3>
-                        <BreedVideo vid={breed.youtube} />
+                        {/* <iframe width="420" height="315" title='detailed-info'
+                        src={`https://www.youtube.com/embed/${breed.youtube}`}>
+                    </iframe> */}
                     </div>
 
                     <div className='tab-container'>
@@ -63,8 +72,11 @@ class BreedDetail extends Component {
                         <hr />
                         <h2>{breed.name} Photos</h2>
                         <hr />
-                        <Photos />
-                        Cute dog photos will go here!
+                        {/* <Photos /> */}
+                    </div>
+
+                    <div>
+                        <Genetics props={genetics}/>
                     </div>
                 </div>
             </div>

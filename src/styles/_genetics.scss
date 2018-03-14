@@ -1,0 +1,59 @@
+#genetic-main {
+    width: 700px;
+    border: solid black 1px;
+    height: 420px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    // background: #4AC29A; 
+    // background: -webkit-linear-gradient(to bottom, #BDFFF3, #4AC29A);
+    // background: linear-gradient(to bottom, #BDFFF3, #4AC29A);
+}
+  
+.child {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+  
+.pill {
+    // border: solid black 1px;
+    height: 65%;
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .one {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  .three {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  
+  .two {
+    width: 100%;
+  }
+  
+  .label {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dark {
+      background-color: #E9C22D;
+  }
+
+  .nofill {
+      background-color: #FCF7F8;
+  }

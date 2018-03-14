@@ -36,6 +36,12 @@ export default class Home extends Component {
                 <hr width='75%' />
                 <br />
 
+                <div>
+                    <iframe width="420" height="315" title='info'
+                        src="https://www.youtube.com/embed/ASxkyQKZE4k">
+                    </iframe>
+                </div>
+
                 <div className='home-spotlight'>
                     <h1>Breeds of the Month</h1>
                     <Spotlight history={this.props.history} />
