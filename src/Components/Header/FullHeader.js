@@ -16,7 +16,7 @@ export default function FullHeader() {
                     <Link to='/'>Home</Link>
                     <li>Spotlight</li>
                     <li>About</li>
-                    <li>Explore</li>
+                    <Link to='/explore'>Explore</Link>
                 </div>
 
                 <div className='selection'>

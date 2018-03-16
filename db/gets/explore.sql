@@ -1,0 +1,2 @@
+SELECT id, name, weight, height, energy, barking, playful, intelligence, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding, hypoallergenic from traits
+NATURAL JOIN breeds

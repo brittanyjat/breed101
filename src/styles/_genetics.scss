@@ -14,7 +14,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
 }
-  
+
+.one, .two, .three {
+    border: 1px solid grey;
+}
+
 .pill {
     height: 65%;
     width: 90%;

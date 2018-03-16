@@ -1,0 +1,31 @@
+.explore-header {
+    margin: auto;
+    width: 95%;
+    min-height: 60px;
+    background-color: lightblue;
+}
+
+.filter-header {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    span {
+        margin-top: 15px;
+    }
+}
+
+.filter-container {
+    min-height: 100px;
+    width: 80%;
+    margin: auto;
+    h3 {
+        margin-top: 20px;
+    }
+}
+
+
+.hidden {
+    display: none;
+}

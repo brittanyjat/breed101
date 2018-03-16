@@ -32,9 +32,6 @@ class Search extends Component {
         const { selectedOption } = this.state;
         return (
             <div className='search'>
-                {/* <div>
-                    <Icon name='content' size='large' color='grey' />
-                </div> */}
 
                 <Select
                     name='breed-search'

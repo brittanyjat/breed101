@@ -7,6 +7,7 @@ import Home from './Components/Home/Home';
 import AddNew from './Components/Admin/AddNew';
 import AdminHome from './Components/Admin/AdminHome';
 import Update from './Components/Admin/Update';
+import Explore from './Components/Explore';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path='/add' exact component={AddNew} />
             <Route path='/admin' exact component={AdminHome} />
             <Route path='/update/:id' component={Update} />
+            <Route path='/explore' component={Explore} />
           </Switch>
         </BrowserRouter>
       </div>

@@ -8,14 +8,25 @@ import { withRouter } from 'react-router';
 class AllTable extends Component {
 
     componentDidMount() {
-        const { getAll } = this.props;
-        axios.get('/api/all').then(response => {
-            getAll(response.data)
-        });
+        this.props.getAll()
     }
 
     handleSelect(id) {
         this.props.updateSelected(id)
+    }
+
+    addSpotlight(selected) {
+        var spotlight = null;
+        const { breedList } = this.props;
+        for (var i = 0; i < breedList.length; i++) {
+            if (breedList[i].id === selected) {
+                spotlight = breedList[i].spotlight
+            }
+        }
+        axios.put(`/api/spotlight/${selected}`, {spotlight}).then(res => {
+            this.props.updateSelected(null)
+            this.props.getAll()
+        })
     }
 
     render() {
@@ -56,11 +67,19 @@ class AllTable extends Component {
                             <Table.Row>
                                 <Table.HeaderCell />
                                 <Table.HeaderCell colSpan='4'>
+
                                     <Button floated='right' icon labelPosition='left' primary size='small' onClick={() => history.push(`/add`)}>
                                         <Icon name='paw' /> Add New Breed
                                     </Button>
+
+                                    <Button floated='right' color='yellow' icon labelPosition='left' size='small' onClick={() => this.addSpotlight(selected)}>
+                                        <Icon name='diamond' />Update Spotlight
+                                    </Button>
+
                                     <Button size='small' color='olive' onClick={() => history.push(`/update/${selected}`)}>Update</Button>
+
                                     <Button size='small' color='red' onClick={() => deleteBreed(selected)}>Delete</Button>
+
                                 </Table.HeaderCell>
                             </Table.Row>
                         </Table.Footer>

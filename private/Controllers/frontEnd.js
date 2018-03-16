@@ -16,5 +16,11 @@ module.exports = {
         db.gets.spotlights().then(breeds => {
             res.status(200).send(breeds)
         }).catch(err => res.status(500).send(err))
+    },
+    explore: (req, res) => {
+        const db = req.app.get('db');
+        db.gets.explore().then(breeds => {
+            res.status(200).send(breeds)
+        }).catch(err => res.status(500).send(err))
     }
 }

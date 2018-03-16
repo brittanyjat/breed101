@@ -85,3 +85,13 @@
 #### March 14, 2018
 1. Created genetics table on breed detail page!
 2. Update finally working!
+---
+
+#### March 15, 2018
+1. Worked on admin table
+    - Admin can now add and remove spotlighted breeds from homepage
+---
+
+#### March 16, 2018
+1. Created /explore route 
+    - trying to figure out the best way to filter through all attributes. 

@@ -51,6 +51,20 @@ module.exports = {
                     res.status(200).send('Successfully Updated')
                 }).catch(err => console.log(err))
         }).catch(err => res.status(500).send(err))
+    },
+    addSpotlight: (req, res) => {
+        const db = req.app.get('db');
+        const { id } = req.params;
+        const { spotlight } = req.body;
+        if (spotlight === true) {
+            db.update.add_spotlight([id, false]).then(response => {
+                res.status(200).send('Successfully removed spotlight')
+            }).catch(err => { res.status(500).send(err) })
+        } else {
+            db.update.add_spotlight([id, true]).then(response => {
+                res.status(200).send('Successfully added spotlight')
+            }).catch(err => { res.status(500).send(err) })
+        }
     }
 }
 

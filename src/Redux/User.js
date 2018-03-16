@@ -4,14 +4,16 @@ const userState = {
     currentBreed: [],
     loading: false,
     photos: [],
-    spotlight: []
+    spotlight: [],
+    breedExplore: []
 }
 
 const UPDATE_CURRENT = 'UPDATE_CURRENT';
 const GET_PHOTOS = 'GET_PHOTOS';
-const _PENDING = 'PENDING';
+const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
 const GET_SPOTLIGHT = 'GET_SPOTLIGHT';
+const GET_EXPLORE = 'GET_EXPLORE';
 
 export default function user(state = userState, action) {
     const { payload } = action;
@@ -28,6 +30,10 @@ export default function user(state = userState, action) {
             return { ...state, loading: true }
         case GET_SPOTLIGHT + _FULFILLED:
             return { ...state, spotlight: payload }
+        case GET_EXPLORE + _PENDING:
+            return { ...state, loading: true }
+        case GET_EXPLORE + _FULFILLED:
+            return { ...state, breedExplore: payload }
         default:
             return state
     }
@@ -54,6 +60,14 @@ export function getSpotlight() {
     const promise = axios.get('/api/spotlight').then(res => res.data);
     return {
         type: GET_SPOTLIGHT,
+        payload: promise
+    }
+}
+
+export function getExplore() {
+    const promise = axios.get('/api/explore').then(res => res.data);
+    return {
+        type: GET_EXPLORE,
         payload: promise
     }
 }

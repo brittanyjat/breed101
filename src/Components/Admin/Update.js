@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Radio } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { updateBreed } from '../../Redux/adminReducer';
 import axios from 'axios';
@@ -36,22 +36,22 @@ class Update extends Component {
         const { updates } = this.state;
 
         axios.put(`/api/breed/${id}`, updates).then(res => {
-            console.log(res)
+            this.props.history.push('/admin')
         })
     }
 
     render() {
-        const { affection, apartment, barking, cat, ceo, child, trait1, trait2, trait3, youtube, description, dog, energy, exercise, expectancy, grooming, health, height, hypoallergenic, intelligence, name, photo, playful, shedding, train, weight } = this.state.updates;
+        const { affection, apartment, barking, cat, ceo, child, trait1, trait2, trait3, youtube, description, dog, energy, exercise, expectancy, grooming, health, height, intelligence, name, photo, playful, shedding, train, weight } = this.state.updates;
         console.log(this.state)
         return (
             <div className='update-container'>
                 <div>
                     <h1>Update {name}</h1>
-                    <Table compact celled definition size='small'>
+                    <Table compact celled size='small' striped={true}>
                         <Table.Header>
                             <Table.Row>
                                 <Table.HeaderCell>Property</Table.HeaderCell>
-                                <Table.HeaderCell>Value</Table.HeaderCell>
+                                <Table.HeaderCell >Value</Table.HeaderCell>
                                 <Table.HeaderCell>New Value</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
@@ -60,7 +60,7 @@ class Update extends Component {
                             <Table.Row>
                                 <Table.Cell>Name</Table.Cell>
                                 <Table.Cell>{name}</Table.Cell>
-                                <Table.Cell><input type='text' onChange={(e) => this.handleInput('name', e.target.value)}></input></Table.Cell>
+                                <Table.Cell children={<input type='text' onChange={(e) => this.handleInput('name', e.target.value)}></input>}></Table.Cell>
                             </Table.Row>
 
                             <Table.Row>

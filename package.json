@@ -21,7 +21,8 @@
     "react-youtube": "^7.5.0",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^5.0.0",
-    "semantic-ui-react": "^0.78.3"
+    "semantic-ui-react": "^0.78.3",
+    "underscore": "^1.8.3"
   },
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",

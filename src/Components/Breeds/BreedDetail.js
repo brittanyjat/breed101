@@ -5,7 +5,7 @@ import Tabs from './Tabs';
 import Header from '../Header/Header';
 import Photos from './Photos';
 import Genetics from './Genetics';
-import windowSize from 'react-window-size';
+// import hypo from '../../assets/logo.png';
 
 class BreedDetail extends Component {
     constructor(){
@@ -69,9 +69,8 @@ class BreedDetail extends Component {
                         <h6>* based on median for breed</h6>
                     </div>
 
-                    <div className='detail-container'>
-                        <h2>{breed.name} Photos</h2>
-                        <hr />
+                    <div className='photo-hypo-container'>
+
                         <Photos />
                     </div>
 
@@ -98,4 +97,4 @@ var mapStateToProps = (state) => {
     }
 }
 
-export default windowSize(connect(mapStateToProps, { breedDetail })(BreedDetail));
+export default connect(mapStateToProps, { breedDetail })(BreedDetail);
