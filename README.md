@@ -103,3 +103,4 @@
     - When button is clicked, the value is sent to redux and filtered throught underscore.js
     - Reset button restores all breeds to Explore component
     - Need to figure out a way to remove filters rather than resetting all data.
+2. Styled explore 

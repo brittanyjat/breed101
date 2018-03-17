@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getExplore, filter, resetFilter } from '../Redux/exploreReducer';
 import Header from './Header/Header';
 import { Icon, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 class Explore extends Component {
     constructor() {
@@ -18,7 +19,7 @@ class Explore extends Component {
                 { value: 'energy', label: 'Energy Level', icon: 'battery full' },
                 { value: 'exercise', label: 'Exercise Needs', icon: 'certificate' },
                 { value: 'grooming', label: 'Grooming Needs', icon: 'bath' },
-                { value: 'health', label: 'General Health', icon: 'doctor' },
+                { value: 'health', label: 'General Health', icon: 'first aid' },
                 { value: 'hypoallergenic', label: 'Hypoallergenic', icon: 'leaf' },
                 { value: 'intelligence', label: 'Intelligence', icon: 'idea' },
                 { value: 'playful', label: 'Playfulness', icon: 'smile' },
@@ -45,7 +46,7 @@ class Explore extends Component {
         const { breedExplore, filter, filteredValues } = this.props;
         const buttons = attributes.map((x, i) => {
             return (
-                <Button key={i} icon labelPosition='left' size='tiny'
+                <Button style={{margin: '3px'}} key={i} icon labelPosition='left' size='tiny'
                     onClick={(e) => filter(x.value)}
                     color={filteredValues.includes(x.value) ? 'yellow' : null}>
                     <Icon name={x.icon} />
@@ -56,10 +57,12 @@ class Explore extends Component {
 
         const breeds = breedExplore.map((breed, i) => {
             return (
-                <div key={i} className='breed-explore-card'>
-                    <img src={breed.photo} alt='breed-thumbnail' />
-                    <h3>{breed.name}</h3>
-                </div>
+                <Link to={`/breed/${breed.id}`}>
+                    <div key={i} className='breed-explore-card'>
+                        <div className='explore-img' style={{ backgroundImage: `url(${breed.photo})` }}></div>
+                        <div className='explore-name'><h3>{breed.name}</h3></div>
+                    </div>
+                </Link>
             )
         })
 
@@ -73,7 +76,7 @@ class Explore extends Component {
                     </div>
                     <div className={showFilters ? 'filter-container' : 'hidden'}>
                         <h3>Filter By</h3>
-                        <div>
+                        <div className='filter-button-container'>
                             {buttons}
                             <Button color='green' onClick={() => this.reset()}>RESET</Button>
                         </div>
