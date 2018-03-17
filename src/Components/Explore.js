@@ -1,55 +1,64 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getExplore } from '../Redux/User';
+import { getExplore, filter, resetFilter } from '../Redux/User';
 import Header from './Header/Header';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 
 class Explore extends Component {
     constructor() {
         super();
 
         this.state = {
-            breedExplore: [],
             showFilters: false,
             attributes: [
-                { value: 'affection', label: 'Affection Level' },
-                { value: 'apartment', label: 'Apartment Friendly' },
-                { value: 'cat', label: 'Cat Friendly' },
-                { value: 'dog', label: 'Dog Friendly' },
-                { value: 'energy', label: 'Energy Level' },
-                { value: 'exercise', label: 'Exercise Needs' },
-                { value: 'grooming', label: 'Grooming Needs' },
-                { value: 'health', label: 'General Health' },
+                { value: 'affection', label: 'Affection Level', icon: 'heart' },
+                { value: 'apartment', label: 'Apartment Friendly', icon: 'building outline' },
+                { value: 'cat', label: 'Cat Friendly', icon: 'paw' },
+                { value: 'dog', label: 'Dog Friendly', icon: 'paw' },
+                { value: 'energy', label: 'Energy Level', icon: 'battery full' },
+                { value: 'exercise', label: 'Exercise Needs', icon: 'certificate' },
+                { value: 'grooming', label: 'Grooming Needs', icon: 'bath' },
+                { value: 'health', label: 'General Health', icon: 'doctor' },
                 // { value: 'height', label: 'Height' },
-                // { value: 'hypoallergenic', label: 'Hypoallergenic' },
-                { value: 'intelligence', label: 'Intelligence' },
-                { value: 'playful', label: 'Playfulness' },
-                { value: 'shedding', label: 'Shedding Level' },
-                { value: 'train', label: 'Trainability' },
+                { value: 'hypoallergenic', label: 'Hypoallergenic', icon: 'leaf' },
+                { value: 'intelligence', label: 'Intelligence', icon: 'idea' },
+                { value: 'playful', label: 'Playfulness', icon: 'smile' },
+                { value: 'shedding', label: 'Shedding Level', icon: 'trash' },
+                { value: 'train', label: 'Trainability', icon: 'student' },
                 // { value: 'weight', label: 'Weight' },
-                { value: 'barking', label: 'Barking Tendencies' },
-                { value: 'child', label: 'Kid Friendly' },
-            ],
-            selected: null
+                { value: 'barking', label: 'Barking Tendencies', icon: 'volume up' },
+                { value: 'child', label: 'Kid Friendly', icon: 'child' },
+            ]
         }
+        this.reset = this.reset.bind(this);
     }
 
     componentDidMount() {
         this.props.getExplore();
-        this.setState({breedExplore: this.props.breedExplore})
     }
 
-    // filterBreeds(value){
-    //     this.props.filterBreeds
-    // }
+    reset(){
+        this.props.resetFilter();
+        this.props.getExplore();
+    }
 
     render() {
         const { showFilters, attributes } = this.state;
-        console.log(this.state)
-
-        const options = attributes.map((option, i) => {
+        const { breedExplore, filter, getExplore, filteredValues, resetFilter } = this.props;
+        const buttons = attributes.map((x, i) => {
             return (
-                <option key={i} value={option.value}>{option.label}</option>
+                <Button key={i} icon labelPosition='left' size='tiny'
+                    onClick={(e) => filter(x.value)}
+                    color={filteredValues.includes(x.value) ? 'yellow' : null}>
+                    <Icon name={x.icon} />
+                    {x.label}
+                </Button>
+            )
+        })
+
+        const breeds = breedExplore.map((breed, i) => {
+            return (
+                <p key={i}>{breed.name}</p>
             )
         })
 
@@ -58,20 +67,20 @@ class Explore extends Component {
                 <Header />
                 <div className='explore-header'>
                     <div className='filter-header'>
-                        {/* <span>{breedExplore.length} results</span> */}
+                        <span>{breedExplore.length} results</span>
                         <span>Advanced Filters <Icon name='filter' onClick={() => this.setState({ showFilters: !this.state.showFilters })} /></span>
                     </div>
                     <div className={showFilters ? 'filter-container' : 'hidden'}>
                         <h3>Filter By</h3>
                         <div>
-                            <select onChange={(e) => console.log(e.target.value)}>
-                                {options}
-                            </select>
+                            {buttons}
+                            <Button color='green' onClick={() => this.reset()}>RESET</Button>
                         </div>
                     </div>
                 </div>
 
                 <div className='explore-results'>
+                    {breeds}
                 </div>
             </div>
         )
@@ -80,8 +89,9 @@ class Explore extends Component {
 
 var mapStateToProps = (state) => {
     return {
-        breedExplore: state.user.breedExplore
+        breedExplore: state.user.breedExplore,
+        filteredValues: state.user.filteredValues
     }
 }
 
-export default connect(mapStateToProps, { getExplore })(Explore);
+export default connect(mapStateToProps, { getExplore, filter, resetFilter })(Explore);

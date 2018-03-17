@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import windowSize from 'react-window-size';
 import MobileHeader from './MobileHeader';
 import FullHeader from './FullHeader';
 
 
 class Header extends Component {
     render() {
-        const { windowWidth } = this.props;
+        var winWidth = window.innerWidth;
         return (
             <div >
-                {windowWidth > 700 ? <FullHeader /> : <MobileHeader />}
+                {winWidth > 700 ? <FullHeader /> : <MobileHeader />}
                 <div className='tagline'>
                     <h5>Educating humans since 2018</h5>
                 </div>
@@ -18,4 +17,4 @@ class Header extends Component {
     }
 }
 
-export default windowSize(Header);
+export default (Header);
