@@ -29,3 +29,11 @@
 .hidden {
     display: none;
 }
+
+.breed-explore-card {
+    border: solid 1px black;
+    max-height: 300px;
+    img {
+        height: 75%;
+    }
+}

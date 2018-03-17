@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getExplore, filter, resetFilter } from '../Redux/User';
+import { getExplore, filter, resetFilter } from '../Redux/exploreReducer';
 import Header from './Header/Header';
 import { Icon, Button } from 'semantic-ui-react';
 
@@ -19,13 +19,11 @@ class Explore extends Component {
                 { value: 'exercise', label: 'Exercise Needs', icon: 'certificate' },
                 { value: 'grooming', label: 'Grooming Needs', icon: 'bath' },
                 { value: 'health', label: 'General Health', icon: 'doctor' },
-                // { value: 'height', label: 'Height' },
                 { value: 'hypoallergenic', label: 'Hypoallergenic', icon: 'leaf' },
                 { value: 'intelligence', label: 'Intelligence', icon: 'idea' },
                 { value: 'playful', label: 'Playfulness', icon: 'smile' },
                 { value: 'shedding', label: 'Shedding Level', icon: 'trash' },
                 { value: 'train', label: 'Trainability', icon: 'student' },
-                // { value: 'weight', label: 'Weight' },
                 { value: 'barking', label: 'Barking Tendencies', icon: 'volume up' },
                 { value: 'child', label: 'Kid Friendly', icon: 'child' },
             ]
@@ -37,14 +35,14 @@ class Explore extends Component {
         this.props.getExplore();
     }
 
-    reset(){
+    reset() {
         this.props.resetFilter();
         this.props.getExplore();
     }
 
     render() {
         const { showFilters, attributes } = this.state;
-        const { breedExplore, filter, getExplore, filteredValues, resetFilter } = this.props;
+        const { breedExplore, filter, filteredValues } = this.props;
         const buttons = attributes.map((x, i) => {
             return (
                 <Button key={i} icon labelPosition='left' size='tiny'
@@ -58,7 +56,10 @@ class Explore extends Component {
 
         const breeds = breedExplore.map((breed, i) => {
             return (
-                <p key={i}>{breed.name}</p>
+                <div key={i} className='breed-explore-card'>
+                    <img src={breed.photo} alt='breed-thumbnail' />
+                    <h3>{breed.name}</h3>
+                </div>
             )
         })
 
@@ -89,8 +90,8 @@ class Explore extends Component {
 
 var mapStateToProps = (state) => {
     return {
-        breedExplore: state.user.breedExplore,
-        filteredValues: state.user.filteredValues
+        breedExplore: state.exploreReducer.breedExplore,
+        filteredValues: state.exploreReducer.filteredValues
     }
 }
 
