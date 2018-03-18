@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getExplore, filter, resetFilter } from '../Redux/exploreReducer';
+import { getExplore, filter, resetFilter, sort } from '../Redux/exploreReducer';
 import Header from './Header/Header';
 import { Icon, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
@@ -43,10 +43,10 @@ class Explore extends Component {
 
     render() {
         const { showFilters, attributes } = this.state;
-        const { breedExplore, filter, filteredValues } = this.props;
+        const { breedExplore, filter, filteredValues, sort } = this.props;
         const buttons = attributes.map((x, i) => {
             return (
-                <Button style={{margin: '3px'}} key={i} icon labelPosition='left' size='tiny'
+                <Button key={i} style={{ margin: '3px' }}  icon labelPosition='left' size='mini'
                     onClick={(e) => filter(x.value)}
                     color={filteredValues.includes(x.value) ? 'yellow' : null}>
                     <Icon name={x.icon} />
@@ -55,10 +55,16 @@ class Explore extends Component {
             )
         })
 
+        const sortOptions = attributes.map((x, i) => {
+            return (
+                <option key={i} value={x.value}>{x.label}</option>
+            )
+        })
+
         const breeds = breedExplore.map((breed, i) => {
             return (
-                <Link to={`/breed/${breed.id}`}>
-                    <div key={i} className='breed-explore-card'>
+                <Link to={`/breed/${breed.id}`} key={i} >
+                    <div className='breed-explore-card'>
                         <div className='explore-img' style={{ backgroundImage: `url(${breed.photo})` }}></div>
                         <div className='explore-name'><h3>{breed.name}</h3></div>
                     </div>
@@ -78,12 +84,21 @@ class Explore extends Component {
                         <h3>Filter By</h3>
                         <div className='filter-button-container'>
                             {buttons}
-                            <Button color='green' onClick={() => this.reset()}>RESET</Button>
                         </div>
+                        <Button style={{ width: '100px', margin: 'auto' }} color='green' onClick={() => this.reset()}>RESET</Button>
                     </div>
                 </div>
 
                 <div className='explore-results'>
+                    <div>
+                        <h3>Sort by:</h3>
+                        <select onChange={(e) => sort(e.target.value)}>
+                            <option default>---Select---</option>
+                            {sortOptions}
+                            <option value='weight'>Weight</option>
+                            <option value='height'>Height</option>
+                        </select>
+                    </div>
                     {breeds}
                 </div>
             </div>
@@ -98,4 +113,4 @@ var mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getExplore, filter, resetFilter })(Explore);
+export default connect(mapStateToProps, { getExplore, filter, resetFilter, sort })(Explore);

@@ -104,3 +104,8 @@
     - Reset button restores all breeds to Explore component
     - Need to figure out a way to remove filters rather than resetting all data.
 2. Styled explore 
+3. Started sorting option on explore component.
+---
+#### March 18, 2018
+1. Couldn't figure out why sort wasn't working. Realized by console logging typeof() that my the data coming back from my tables was all in strings.
+    - Changed column types in traits table to 'integer' rather than numeric. Problem solved!

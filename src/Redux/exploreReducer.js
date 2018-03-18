@@ -14,6 +14,7 @@ const RESET_FILTER = 'RESET_FILTER';
 // const UNDO_FILTER = 'UNDO_FILTER';
 const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
+const SORT = 'SORT';
 
 export default function exploreReducer(state = initialState, action) {
     const { payload } = action;
@@ -36,7 +37,8 @@ export default function exploreReducer(state = initialState, action) {
 
         case RESET_FILTER:
             return { ...state, filteredValues: [] }
-
+        case SORT:
+            return { ...state, breedExplore: _.sortBy(state.breedExplore, action.value).reverse() }
         // case UNDO_FILTER:
         //     var newFiltered = state.filteredValues;
         //     const { breedExploreCopy } = state;
@@ -75,3 +77,7 @@ export function resetFilter() {
 // export function undo(value) {
 //     return { value, type: UNDO_FILTER }
 // }
+
+export function sort(value) {
+    return { value, type: SORT }
+}
