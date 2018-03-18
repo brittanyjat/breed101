@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getExplore, filter, resetFilter, sort } from '../Redux/exploreReducer';
-import Header from './Header/Header';
+import MainHeader from './Header/Header';
 import { Icon, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
@@ -46,7 +46,7 @@ class Explore extends Component {
         const { breedExplore, filter, filteredValues, sort } = this.props;
         const buttons = attributes.map((x, i) => {
             return (
-                <Button key={i} style={{ margin: '3px' }}  icon labelPosition='left' size='mini'
+                <Button key={i} style={{ margin: '3px' }} icon labelPosition='left' size='mini'
                     onClick={(e) => filter(x.value)}
                     color={filteredValues.includes(x.value) ? 'yellow' : null}>
                     <Icon name={x.icon} />
@@ -74,7 +74,7 @@ class Explore extends Component {
 
         return (
             <div>
-                <Header />
+                <MainHeader />
                 <div className='explore-header'>
                     <div className='filter-header'>
                         <span>{breedExplore.length} results</span>
@@ -89,16 +89,18 @@ class Explore extends Component {
                     </div>
                 </div>
 
-                <div className='explore-results'>
-                    <div>
-                        <h3>Sort by:</h3>
-                        <select onChange={(e) => sort(e.target.value)}>
-                            <option default>---Select---</option>
-                            {sortOptions}
-                            <option value='weight'>Weight</option>
-                            <option value='height'>Height</option>
-                        </select>
-                    </div>
+                <div className='sort-container'>
+                    <span>Sort by:</span>
+                    <select onChange={(e) => sort(e.target.value)}>
+                        <option default>---Select---</option>
+                        {sortOptions}
+                        <option value='weight'>Weight</option>
+                        <option value='height'>Height</option>
+                    </select>
+                    <Icon name='sort content descending' size='large'/>
+                </div>
+
+                <div className='breed-container'>
                     {breeds}
                 </div>
             </div>

@@ -3,7 +3,7 @@ import MobileHeader from './MobileHeader';
 import FullHeader from './FullHeader';
 
 
-class Header extends Component {
+class MainHeader extends Component {
     render() {
         var winWidth = window.innerWidth;
         return (
@@ -17,4 +17,4 @@ class Header extends Component {
     }
 }
 
-export default (Header);
+export default (MainHeader);

@@ -109,3 +109,5 @@
 #### March 18, 2018
 1. Couldn't figure out why sort wasn't working. Realized by console logging typeof() that my the data coming back from my tables was all in strings.
     - Changed column types in traits table to 'integer' rather than numeric. Problem solved!
+2. Removed video on homepage and added it back as a modal for a cleaner look.
+3. Added and styled articles on homepage.

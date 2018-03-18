@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { breedDetail } from '../../Redux/User';
 import Tabs from './Tabs';
-import Header from '../Header/Header';
+import MainHeader from '../Header/Header';
 import Photos from './Photos';
 import Genetics from './Genetics';
 // import hypo from '../../assets/logo.png';
@@ -36,7 +36,7 @@ class BreedDetail extends Component {
         }
         return (
             <div id='breed-detail'>
-                <Header />
+                <MainHeader />
                 <div className='breed-top-section' style={bgImg}>
                         <div>
                             <h1> {breed.name} </h1>
