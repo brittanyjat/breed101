@@ -4,7 +4,6 @@ import _ from 'underscore';
 const initialState = {
     loading: false,
     breedExplore: [],
-    // breedExploreCopy: [],
     filteredValues: []
 }
 
@@ -21,7 +20,7 @@ export default function exploreReducer(state = initialState, action) {
         case GET_EXPLORE + _PENDING:
             return { ...state, loading: true }
         case GET_EXPLORE + _FULFILLED:
-            return { ...state, breedExplore: payload, breedExploreCopy: payload }
+            return { ...state, breedExplore: payload }
 
         case FILTER:
             var filtered = []

@@ -24,6 +24,7 @@ app.get('/api/spotlight', frontEnd.spotlight);
 app.get('/api/update/:id', breeds.getUpdate);
 app.put('/api/spotlight/:id', breeds.addSpotlight);
 app.get('/api/explore', frontEnd.explore);
+app.get('/api/quiz', frontEnd.quiz);
 
 
 

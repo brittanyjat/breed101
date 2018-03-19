@@ -9,15 +9,15 @@ import larg_dog from '../../assets/large_dog.svg';
 
 class Step2 extends Component {
     render() {
-        const {quizMatch, sizeSelector} = this.props;
+        const { quizMatch, sizeSelector, size, matched } = this.props;
         return (
             <div className='step-2'>
                 <h1>Find Your Perfect Breed</h1>
                 <h3>What size dog would you like? Select all that apply.</h3>
                 <img src={small_dog} alt='small-dog' onClick={() => sizeSelector(25)} />
-                <img src={dog} alt='dog' onClick={() => sizeSelector(50)}/>
-                <img src={larg_dog} alt='large-dog' style={{ transform: 'scaleX(-1)' }} onClick={() => sizeSelector(250)}/>
-                <Link to='/quiz/step3'>
+                <img src={dog} alt='dog' onClick={() => sizeSelector(50)} />
+                <img src={larg_dog} alt='large-dog' style={{ transform: 'scaleX(-1)' }} onClick={() => sizeSelector(250)} />
+                <Link to='/quiz/step3' onClick={() => quizMatch(size)}>
                     <Button>Next Step</Button>
                 </Link>
             </div>
@@ -25,4 +25,11 @@ class Step2 extends Component {
     }
 }
 
-export default connect(null, { quizMatch, sizeSelector })(Step2);
+var mapStateToProps = (state) => {
+    return {
+        size: state.quiz.size,
+        matched: state.quiz.matched
+    }
+}
+
+export default connect(mapStateToProps, { quizMatch, sizeSelector })(Step2);
