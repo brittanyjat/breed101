@@ -1,5 +1,4 @@
 import axios from 'axios';
-import _ from 'underscore';
 
 const initialState = {
     size: 0,
@@ -10,7 +9,7 @@ const initialState = {
     dogs: false,
     children: false,
     energy: 0,
-    affection: 0, 
+    affection: 0,
     shedding: 0
 }
 
@@ -45,13 +44,19 @@ export default function quiz(state = initialState, action) {
             return { ...state, dogs: !state.dogs }
         case UPDATE_CHILDREN:
             return { ...state, children: !state.children }
+        case UPDATE_ENERGY:
+            return { ...state, energy: payload }
+        case UPDATE_AFFECTION:
+            return { ...state, affection: payload }
+        case UPDATE_SHEDDING:
+            return { ...state, shedding: payload }
         default:
             return state
     }
 }
 
-export function quizMatch(value) {
-    const promise = axios.get(`/api/quiz?size=${value}`).then(res => res.data);
+export function quizMatch(body) {
+    const promise = axios.post('/api/quiz', body).then(res => res.data);
     return {
         type: GET_QUIZ_BREEDS,
         payload: promise
@@ -82,5 +87,13 @@ export function updateChildren() {
 }
 
 export function updateEnergy(value) {
-    return { type: UPDATE_ENERGY }
+    return { type: UPDATE_ENERGY, payload: value }
+}
+
+export function updateAffection(value) {
+    return { type: UPDATE_AFFECTION, payload: value }
+}
+
+export function updateShedding(value) {
+    return { type: UPDATE_SHEDDING, payload: value }
 }

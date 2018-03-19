@@ -11,8 +11,6 @@ const frontEnd = require('./Controllers/frontEnd');
 
 app.use(bodyParser.json());
 
-
-
 app.get('/api/breedList', breeds.breedList);
 app.post('/api/new', breeds.new);
 app.get('/api/breed/:id', breeds.detail);
@@ -24,7 +22,7 @@ app.get('/api/spotlight', frontEnd.spotlight);
 app.get('/api/update/:id', breeds.getUpdate);
 app.put('/api/spotlight/:id', breeds.addSpotlight);
 app.get('/api/explore', frontEnd.explore);
-app.get('/api/quiz', frontEnd.quiz);
+app.post('/api/quiz', frontEnd.quiz);
 
 
 

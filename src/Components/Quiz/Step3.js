@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Radio, Form } from 'semantic-ui-react';
+import { Button, Radio } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateApartment, updateCats, updateChildren, updateDogs } from '../../Redux/quiz';
