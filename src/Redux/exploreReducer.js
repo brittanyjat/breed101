@@ -11,7 +11,6 @@ const initialState = {
 const GET_EXPLORE = 'GET_EXPLORE';
 const FILTER = 'FILTER';
 const RESET_FILTER = 'RESET_FILTER';
-// const UNDO_FILTER = 'UNDO_FILTER';
 const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
 const SORT = 'SORT';
@@ -39,18 +38,6 @@ export default function exploreReducer(state = initialState, action) {
             return { ...state, filteredValues: [] }
         case SORT:
             return { ...state, breedExplore: _.sortBy(state.breedExplore, action.value).reverse() }
-        // case UNDO_FILTER:
-        //     var newFiltered = state.filteredValues;
-        //     const { breedExploreCopy } = state;
-        //     for (var i = 0; i < newFiltered.length; i++) {
-        //         newFiltered[i] === action.value ? newFiltered.splice(i, 1) : null;
-
-        //         newFiltered.forEach(function (element) {
-        //             _.filter(breedExploreCopy, function (breed) { return element >= 65 })
-        //         })
-        //     }
-
-        //     return { ...state, filteredValues: newFiltered, breedExplore: breedExploreCopy }
         default:
             return state
     }
@@ -73,10 +60,6 @@ export function resetFilter() {
         type: RESET_FILTER
     }
 }
-
-// export function undo(value) {
-//     return { value, type: UNDO_FILTER }
-// }
 
 export function sort(value) {
     return { value, type: SORT }

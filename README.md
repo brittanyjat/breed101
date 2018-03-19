@@ -111,3 +111,11 @@
     - Changed column types in traits table to 'integer' rather than numeric. Problem solved!
 2. Removed video on homepage and added it back as a modal for a cleaner look.
 3. Added and styled articles on homepage.
+---
+
+#### March 19, 2018
+1. Finished styling Recent Articles on Home page.
+    - Couldn't figure out how to make background darker without making the text darker too. Solved by
+        - ```
+        background-color: rgba(0,0,0,.6);
+        ```
