@@ -116,6 +116,5 @@
 #### March 19, 2018
 1. Finished styling Recent Articles on Home page.
     - Couldn't figure out how to make background darker without making the text darker too. Solved by
-        - ```
-        background-color: rgba(0,0,0,.6);
-        ```
+        - ```background-color: rgba(0,0,0,.6); ```
+2. Created routes for Breed Matching quiz.
