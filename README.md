@@ -101,15 +101,19 @@
 1. Got filter on Explore component working!
     - Added buttons to filter section. Button color depends on if that attribute has been selected or not. 
     - When button is clicked, the value is sent to redux and filtered with underscore.js
-        - Action builder :
-            - ```export function filter(value) {```
-            ```return { value, type: FILTER }```
-}
+        - Action creator:
+            ```javascript 
+            export function filter(value) {
+            return { value, type: FILTER }
+            }
+            ```
         - Reducer:
-            - ```case FILTER:```
-            ```var filtered = []```
-            ```if (action.value === 'shedding') {```
-                ```filtered = _.filter(state.breedExplore, function (breed) { return breed[action.value] <= 50 }) ```
+            ```javascript
+            case FILTER:
+            var filtered = []
+            if (action.value === 'shedding') {
+                filtered = _.filter(state.breedExplore, function (breed) { return breed[action.value] <= 50 })
+            ```
     - Reset button restores all breeds to Explore component
     - Need to figure out a way to remove filters rather than resetting all data.
 2. Styled explore 
