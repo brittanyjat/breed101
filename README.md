@@ -13,6 +13,20 @@
 #### March 5, 2018
 1. Set up Redux
     - Made dynamic function in reducer to update state of new breed.
+    - Reducer:
+    ```javascript
+    case UPDATE:
+    return { ...state, [payload.prop]: payload.value }
+    ```
+    - Action Creator:
+    ```javascript
+        export function update(prop, value) {
+            return {
+                type: UPDATE,
+                payload: { prop, value }
+            }
+        }
+    ```
 2. Set up form to add new breed
     - Started setting up database to create new breed
 
