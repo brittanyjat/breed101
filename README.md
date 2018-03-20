@@ -1,7 +1,6 @@
 # BREED 101
+##### This is a portfolio piece to showcase what I have learned while attending DevMountain so far.
 ---
-##### This is a portfolio piece to showcase what I have learned while attending DevMountain.
-
 ## Using
 
 * React

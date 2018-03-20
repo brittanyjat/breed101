@@ -9,31 +9,33 @@ class Step4 extends Component {
     render() {
         const { energy, affection, shedding, updateEnergy, updateAffection, updateShedding, quizMatch, apartment, cats, dogs, children, size } = this.props;
         return (
-            <div>
+            <div className='quiz-container'>
                 <h1>Find Your Perfect Breed</h1>
-                <h3>Rate your desired level of the following characteristics.</h3>
+                <span className='h3'>Rate your desired level of the following characteristics.</span>
 
-                <h4>Energy Level</h4>
-                <div>
-                    <div>level: {energy}</div>
-                    <input type='range' min={0} max={100} value={energy} onChange={(e) => updateEnergy(e.target.value)} />
-                    <br />
+                <div className='question-container'>
+                    <span className='h3'>Maximum Energy Level</span>
+                        <div>{energy}</div>
+                        <input type='range' min={0} max={100} value={energy} onChange={(e) => updateEnergy(e.target.value)} />
+                        <br />
                 </div>
 
-                <div>
-                    <h4>Affection Level</h4>
-                    <div>level: {affection}</div>
+                <div className='question-container'>
+                    <span className='h3'>Minimum Affection Level</span>
+                    <div>{affection}</div>
                     <input type='range' min={0} max={100} value={affection} onChange={(e) => updateAffection(e.target.value)} />
                     <br />
                 </div>
 
-                <h4>Shedding Level</h4>
-                <div>level: {shedding}</div>
-                <input type='range' min={0} max={100} value={shedding} onChange={(e) => updateShedding(e.target.value)} />
-                <br />
+                <div className='question-container'>
+                    <span className='h3'>Maximum Shedding Level</span>
+                    <div>{shedding}</div>
+                    <input type='range' min={0} max={100} value={shedding} onChange={(e) => updateShedding(e.target.value)} />
+                    <br />
+                </div>
 
-                <Link to='/quiz/results' onClick={() => quizMatch({energy, affection, shedding, apartment, cats, dogs, children, size})}>
-                <Button>Results</Button>
+                <Link to='/quiz/results' onClick={() => quizMatch({ energy, affection, shedding, apartment, cats, dogs, children, size })}>
+                    <Button style={{ marginTop: '20px' }} >Results</Button>
                 </Link>
             </div >
         )

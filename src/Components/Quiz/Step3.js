@@ -11,8 +11,9 @@ class Step3 extends Component {
         return (
             <div className='quiz-container'>
                 <h1>Find Your Perfect Breed</h1>
+                
                 <div className='question-container'>
-                    <h3>Do you live in an apartment?</h3>
+                    <span className='h3'>Do you live in an apartment?</span>
                     <div className='radio-container'>
                         <span>No</span>
                         <Radio
@@ -25,7 +26,7 @@ class Step3 extends Component {
                 </div>
 
                 <div className='question-container'>
-                    <h3>Will your dog be around cats?</h3>
+                    <span className='h3'>Will your dog be around cats?</span>
                     <div className='radio-container'>
                         <span>No</span>
                         <Radio
@@ -39,7 +40,7 @@ class Step3 extends Component {
                 </div>
 
                 <div className='question-container'>
-                    <h3>Will your dog be around other dogs?</h3>
+                    <span className='h3'>Will your dog be around other dogs?</span>
                     <div className='radio-container'>
                         <span>No</span>
                         <Radio
@@ -52,7 +53,7 @@ class Step3 extends Component {
                     </div>
                 </div>
                 <div className='question-container'>
-                    <h3>Will your dog be around children?</h3>
+                    <span className='h3'>Will your dog be around children?</span>
                     <div className='radio-container'>
                         <span>No</span>
                         <Radio

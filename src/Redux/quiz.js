@@ -56,6 +56,18 @@ export default function quiz(state = initialState, action) {
 }
 
 export function quizMatch(body) {
+    function converter(obj){
+        for (var i in obj ){
+            if (obj[i] === true){
+                obj[i] = 50
+            } else if (obj[i] === false ){
+                obj[i] = 0
+            } else {
+                null
+            }
+        } return obj
+    }
+    converter(body);
     const promise = axios.post('/api/quiz', body).then(res => res.data);
     return {
         type: GET_QUIZ_BREEDS,

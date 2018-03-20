@@ -90,14 +90,17 @@ class Explore extends Component {
                 </div>
 
                 <div className='sort-container'>
-                    <span>Sort by:</span>
-                    <select onChange={(e) => sort(e.target.value)}>
-                        <option default>---Select---</option>
-                        {sortOptions}
-                        <option value='weight'>Weight</option>
-                        <option value='height'>Height</option>
-                    </select>
-                    <Icon name='sort content descending' size='large'/>
+                    <h1>Results</h1>
+                    <div className='sortby-container'>
+                        <span>Sort by:</span>
+                        <select onChange={(e) => sort(e.target.value)}>
+                            <option default>---Select---</option>
+                            {sortOptions}
+                            <option value='weight'>Weight</option>
+                            <option value='height'>Height</option>
+                        </select>
+                        <Icon name='sort content descending' size='large' />
+                    </div>
                 </div>
 
                 <div className='breed-container'>
