@@ -9,54 +9,64 @@ class Step3 extends Component {
         const { updateApartment, updateCats, updateDogs, updateChildren } = this.props;
 
         return (
-            <div>
+            <div className='quiz-container'>
                 <h1>Find Your Perfect Breed</h1>
-                <h3>Do you live in an apartment?</h3>
-                <div>
-                    <h4>No</h4>
-                    <Radio
-                        onChange={() => updateApartment()}
-                        toggle
-                        value={'apartment'}
-                    />
-                    <h4>Yes</h4>
+                <div className='question-container'>
+                    <h3>Do you live in an apartment?</h3>
+                    <div className='radio-container'>
+                        <span>No</span>
+                        <Radio
+                            style={{ margin: 'auto' }}
+                            onChange={() => updateApartment()}
+                            toggle
+                            value={'apartment'} />
+                        <span>Yes</span>
+                    </div>
                 </div>
 
-                <h3>Will your dog be around cats?</h3>
-                <div>
-                    <h4>No</h4>
-                    <Radio
-                        onChange={() => updateCats()}
-                        toggle
-                        value={'cats'}
-                    />
-                    <h4>Yes</h4>
+                <div className='question-container'>
+                    <h3>Will your dog be around cats?</h3>
+                    <div className='radio-container'>
+                        <span>No</span>
+                        <Radio
+                            style={{ margin: 'auto' }}
+                            onChange={() => updateCats()}
+                            toggle
+                            value={'cats'}
+                        />
+                        <span>Yes</span>
+                    </div>
                 </div>
 
-                <h3>Will your dog be around other dogs?</h3>
-                <div>
-                    <h4>No</h4>
-                    <Radio
-                        onChange={() => updateDogs()}
-                        toggle
-                        value={'dogs'}
-                    />
-                    <h4>Yes</h4>
+                <div className='question-container'>
+                    <h3>Will your dog be around other dogs?</h3>
+                    <div className='radio-container'>
+                        <span>No</span>
+                        <Radio
+                            style={{ margin: 'auto' }}
+                            onChange={() => updateDogs()}
+                            toggle
+                            value={'dogs'}
+                        />
+                        <span>Yes</span>
+                    </div>
                 </div>
-
-                <h3>Will your dog be around children?</h3>
-                <div>
-                    <h4>No</h4>
-                    <Radio
-                        onChange={() => updateChildren()}
-                        toggle
-                        value={'children'}
-                    />
-                    <h4>Yes</h4>
+                <div className='question-container'>
+                    <h3>Will your dog be around children?</h3>
+                    <div className='radio-container'>
+                        <span>No</span>
+                        <Radio
+                            style={{ margin: 'auto' }}
+                            onChange={() => updateChildren()}
+                            toggle
+                            value={'children'}
+                        />
+                        <span>Yes</span>
+                    </div>
                 </div>
 
                 <Link to='/quiz/step4'>
-                    <Button>Next Step</Button>
+                    <Button style={{ marginTop: '20px' }} >Next Step</Button>
                 </Link>
             </div>
         )

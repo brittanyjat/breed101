@@ -1,4 +1,6 @@
-# This is a portfolio piece to showcase what I have learned while attending DevMountain.
+# BREED 101
+---
+##### This is a portfolio piece to showcase what I have learned while attending DevMountain.
 
 ## Using
 
@@ -145,3 +147,8 @@
     - Couldn't figure out how to make background darker without making the text darker too. Solved by
         - ```background-color: rgba(0,0,0,.6); ```
 2. Created routes for Breed Matching quiz.
+3. Quiz fully functional.
+---
+
+#### March 20, 2018
+1. Styled quiz
