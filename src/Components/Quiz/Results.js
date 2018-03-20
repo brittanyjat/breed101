@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { resetQuiz } from '../../Redux/quiz';
 
 class Results extends Component {
+
+    componentWillUnmount(){
+        this.props.resetQuiz()
+    }
+
     render() {
         const { matched } = this.props;
         console.log(matched)
@@ -33,4 +38,4 @@ var mapStateToProps = (state) => {
     return { matched: state.quiz.matched }
 }
 
-export default connect(mapStateToProps, null)(Results)
+export default connect(mapStateToProps, {resetQuiz})(Results)

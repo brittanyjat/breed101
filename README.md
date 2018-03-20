@@ -150,4 +150,34 @@
 ---
 
 #### March 20, 2018
-1. Styled quiz
+1. Had bug in quiz where no matter what the user input was, the same 2 breeds would be returned.
+    - Used for in loop in reducer to change boolens to integers on the req.body. 
+        - ```javascript
+            export function quizMatch(body) {
+                function converter(obj) {
+                    for (var i in obj) {
+                        if (obj[i] === true) {
+                            obj[i] = 50
+                        } else if (obj[i] === false) {
+                            obj[i] = 0
+                        } else {
+                            obj[i] = obj[i]
+                        }
+                    } return obj
+                }
+                converter(body);
+                const promise = axios.post('/api/quiz', body).then(res => res.data);
+                return {
+                    type: GET_QUIZ_BREEDS,
+                    payload: promise
+                }
+            }
+            ```
+
+2. Used componentDidUnMount for the first time to clear quiz inputs from user.
+    - ```javascript
+        case RESET:
+            state = initialState
+            return state
+        ```
+2. Finished styiling quiz.

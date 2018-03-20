@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Progress } from 'semantic-ui-react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import BreedDetails from './Components/Breeds/BreedDetail';

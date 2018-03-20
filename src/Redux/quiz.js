@@ -24,14 +24,13 @@ const UPDATE_CHILDREN = 'UPDATE_CHILDREN';
 const UPDATE_ENERGY = 'UPDATE_ENERGY';
 const UPDATE_AFFECTION = 'UPDATE_AFFECTION';
 const UPDATE_SHEDDING = 'UPDATE_SHEDDING';
+const RESET = 'RESET';
 
 export default function quiz(state = initialState, action) {
     const { payload } = action;
     switch (action.type) {
         case SIZE_SELECT:
-            var newSize = state.size;
-            newSize < payload ? newSize = payload : null
-            return { ...state, size: newSize }
+            return { ...state, size: state.size < payload ? payload : null }
         case GET_QUIZ_BREEDS + _PENDING:
             return { ...state, loading: true }
         case GET_QUIZ_BREEDS + _FULFILLED:
@@ -50,20 +49,23 @@ export default function quiz(state = initialState, action) {
             return { ...state, affection: payload }
         case UPDATE_SHEDDING:
             return { ...state, shedding: payload }
+        case RESET:
+            state = initialState
+            return state
         default:
             return state
     }
 }
 
 export function quizMatch(body) {
-    function converter(obj){
-        for (var i in obj ){
-            if (obj[i] === true){
+    function converter(obj) {
+        for (var i in obj) {
+            if (obj[i] === true) {
                 obj[i] = 50
-            } else if (obj[i] === false ){
+            } else if (obj[i] === false) {
                 obj[i] = 0
             } else {
-                null
+                obj[i] = obj[i]
             }
         } return obj
     }
@@ -108,4 +110,8 @@ export function updateAffection(value) {
 
 export function updateShedding(value) {
     return { type: UPDATE_SHEDDING, payload: value }
+}
+
+export function resetQuiz() {
+    return { type: RESET }
 }
