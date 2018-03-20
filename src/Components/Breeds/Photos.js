@@ -35,8 +35,8 @@ class Photos extends Component {
 
     render() {
         return (
-            <div>
-                <img src={this.state.current} alt='breed' />
+            <div className='photo-container'>
+                <img src={this.state.current} alt='breed' style={{height: '350px', margin: 'auto'}}/>
             </div>
         )
     }

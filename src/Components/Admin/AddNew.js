@@ -7,6 +7,10 @@ import axios from 'axios';
 
 class Admin extends Component {
 
+    componentWillMount() {
+        this.props.clearState();
+    }
+
     submitBreed() {
         let body = {
             name: this.props.name,
@@ -38,8 +42,8 @@ class Admin extends Component {
         axios.post('/api/new', body).then(res => {
             console.log(res)
         })
-    }
 
+    }
 
     render() {
         const { update } = this.props;

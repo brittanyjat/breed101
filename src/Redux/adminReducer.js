@@ -52,13 +52,14 @@ export default function adminReducer(state = initialState, action) {
     const { payload } = action;
     switch (action.type) {
         case GETBREEDS + _PENDING:
-            return { ...state, loading: true}
+            return { ...state, loading: true }
         case GETBREEDS + _FULFILLED:
             return Object.assign({}, state, { breedList: payload })
         case UPDATE:
             return { ...state, [payload.prop]: payload.value }
         case CLEARSTATE:
-            return { ...state, initialState }
+            state = initialState
+            return state
         case UPDATESELECTED:
             return { ...state, selected: payload }
         case DELETE_BREED + _FULFILLED:
@@ -81,9 +82,7 @@ export function update(prop, value) {
 }
 
 export function clearState() {
-    return {
-        type: CLEARSTATE
-    }
+    return { type: CLEARSTATE }
 }
 
 export function deleteBreed(id) {

@@ -29,7 +29,7 @@ export default function exploreReducer(state = initialState, action) {
             } else if (action.value === 'hypoallergenic') {
                 filtered = _.filter(state.breedExplore, function (breed) { return breed[action.value] === true })
             } else {
-                filtered = _.filter(state.breedExplore, function (breed) { return breed[action.value] >= 65 })
+                filtered = _.filter(state.breedExplore, function (breed) { return breed[action.value] >= 60 })
             }
             return { ...state, breedExplore: filtered, filteredValues: [...state.filteredValues, ...[action.value]] }
 

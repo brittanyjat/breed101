@@ -180,4 +180,5 @@
             state = initialState
             return state
         ```
-2. Finished styiling quiz.
+3. Finished styiling quiz.
+4. Started polishing for shippable product!

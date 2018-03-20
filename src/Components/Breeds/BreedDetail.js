@@ -5,7 +5,7 @@ import Tabs from './Tabs';
 import MainHeader from '../Header/Header';
 import Photos from './Photos';
 import Genetics from './Genetics';
-// import hypo from '../../assets/logo.png';
+import hypo from '../../assets/logo.png';
 
 class BreedDetail extends Component {
     constructor(){
@@ -22,6 +22,7 @@ class BreedDetail extends Component {
     }
 
     render() {
+        console.log(window)
         var breed = this.props.currentBreed;
         
         var bgImg = {
@@ -42,9 +43,9 @@ class BreedDetail extends Component {
                             <h1> {breed.name} </h1>
                         </div>
                         <div className='hero-traits'>
-                            <span>{breed.trait1}</span>
-                            <span>{breed.trait2}</span>
-                            <span>{breed.trait3}</span>
+                            <span className='fadeIn'>{breed.trait1}</span>
+                            <span className='fadeIn trait-2'>{breed.trait2}</span>
+                            <span className='fadeIn trait-3'>{breed.trait3}</span>
                         </div>
                     </div>
 
@@ -58,25 +59,29 @@ class BreedDetail extends Component {
                     <div className='tab-container'>
                         <hr />
                         <h2>{breed.name} Attributes</h2>
+                        { breed.hypoallergenic === true ? <img src={hypo} alt='hypoallergenic' className='hypo-badge'/> : null }
                         <Tabs />
                     </div>
 
+
                     <div className='detail-container'>
-                        <h2>{breed.name} Genetics*</h2>
                         <hr/>
-                        <br />
+                        <h2>{breed.name} Photos</h2>
+                        <Photos />
+                        <br/>
+                    </div>
+
+                    <div className='detail-container'>
+                        <hr/>
+                        <h2>{breed.name} Genetics*</h2>
                         <Genetics props={genetics}/>
                         <h6>* based on median for breed</h6>
-                    </div>
-
-                    <div className='photo-hypo-container'>
-
-                        <Photos />
+                        <br />
                     </div>
 
                     <div className='detail-container'>
-                        <h2>{breed.name} Videos</h2>
                         <hr/>
+                        <h2>{breed.name} Videos</h2>
                         <div className='video-wrapper'>
                             <iframe
                             title='detailed-info'
@@ -84,7 +89,6 @@ class BreedDetail extends Component {
                             </iframe>
                         </div>
                     </div>
-
                 </div>
             </div>
         )

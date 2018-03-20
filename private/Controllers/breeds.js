@@ -12,7 +12,7 @@ module.exports = {
         db.add.add_breed([name, photo, ceo, trait1, trait2, trait3, description, weight, height, energy, expected, barking, intelligence, playful, affection, train, apartment, cat, dog, child, exercise, health, grooming, shedding, hypoallergenic])
             .then(response => {
                 res.status(200).send('Success!')
-            }).catch(err => res.status(500).send(err))
+            }).catch(err => console.log(err))
     },
     detail: (req, res) => {
         const db = req.app.get('db');
