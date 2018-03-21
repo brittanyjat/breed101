@@ -8,6 +8,7 @@ import AdminHome from './Components/Admin/AdminHome';
 import Update from './Components/Admin/Update';
 import Explore from './Components/Explore';
 import Quiz from './Components/Quiz/Quiz';
+import About from './Components/About';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path='/update/:id' component={Update} />
             <Route path='/explore' component={Explore} />
             <Route path='/quiz' component={Quiz} />
+            <Route path='/about' component={About} />
           </Switch>
         </BrowserRouter>
       </div>

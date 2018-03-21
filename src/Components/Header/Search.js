@@ -31,8 +31,7 @@ class Search extends Component {
     render() {
         const { selectedOption } = this.state;
         return (
-            <div className='search'>
-
+            <div style={{width: '250px'}} className='search-main'>
                 <Select
                     name='breed-search'
                     value={selectedOption.value}

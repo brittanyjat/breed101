@@ -42,6 +42,10 @@
 4. Completed MVP planning.
 5. Changed column types to numeric in order to use decimals.
 6. Search component now sends ID as param to breed detail component :smiley:
+    - ```javascript
+        history.replace(`/breed/${selectedOption.value}`)
+        history.go()
+    ```
 ----
 
 #### March 7, 2018
@@ -59,6 +63,7 @@
     - Spotlight. If I have time to do this feature, I will be able to toggle which breeds are highlighted on the home page!
 3. Discovered something AWESOME with postgresql.
     - Added cascading feature on traits table so that when I delete an id from the breeds table, it is automatically deleted on traits table!!!
+        - ```create table traits ( id INTEGER REFERENCES breeds ON DELETE CASCADE```
 4. Delete button on admin page now functional!
 5. Started working on update. **Need to finish** 
 6. Added youtube player to breed detail page.
