@@ -2,14 +2,53 @@ require('dotenv').config();
 const express = require('express')
     , app = express()
     , bodyParser = require('body-parser')
-    , massive = require('massive');
+    , massive = require('massive')
+    , session = require('express-session')
+    , passport = require('passport')
+    , Auth0Strategy = require('passport-auth0');
 
-const { SERVER_PORT, CONNECTION_STRING } = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, AUTH_DOMAIN, AUTH_CLIENT_ID, AUTH_CLIENT_SECRET, AUTH_CALLBACK_URL } = process.env;
 
 const breeds = require('./Controllers/breeds');
 const frontEnd = require('./Controllers/frontEnd');
 
 app.use(bodyParser.json());
+
+app.use(session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+passport.use(new Auth0Strategy({
+    domain: AUTH_DOMAIN,
+    clientID: AUTH_CLIENT_ID,
+    clientSecret: AUTH_CLIENT_SECRET,
+    callbackURL: AUTH_CALLBACK_URL,
+    scope: 'openid profile'
+}, function (accessToken, refreshToken, extraParams, profile, done) {
+    console.log(profile);
+    return done(null, profile);
+}));
+
+passport.serializeUser((profile, done) => {
+    return done(null, profile);
+})
+
+passport.deserializeUser((profile, done) => {
+    return done(null, profile);
+})
+
+app.get('/auth', passport.authenticate('auth0'));
+app.get('/auth/callback', passport.authenticate('auth0', {
+    successRedirect: 'http://localhost:3000/admin',
+    failureRedirect: '/auth'
+}));
+
 
 app.get('/api/breedList', breeds.breedList);
 app.post('/api/new', breeds.new);

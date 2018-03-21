@@ -63,7 +63,7 @@ class Explore extends Component {
 
         const breeds = breedExplore.map((breed, i) => {
             return (
-                <Link to={`/breed/${breed.id}`} key={i} >
+                <Link to={`/breed/${breed.id}`} key={i} rel="noopener noreferrer" target="_blank">
                     <div className='breed-explore-card'>
                         <div className='explore-img' style={{ backgroundImage: `url(${breed.photo})` }}></div>
                         <div className='explore-name'><h3>{breed.name}</h3></div>
@@ -85,7 +85,7 @@ class Explore extends Component {
                         <div className='filter-button-container'>
                             {buttons}
                         </div>
-                        <Button style={{ width: '100px', margin: 'auto' }} color='green' onClick={() => this.reset()}>RESET</Button>
+                        <Button style={{ width: '100px', margin: 'auto', marginBottom: '10px' }} color='green' onClick={() => this.reset()}>RESET</Button>
                     </div>
                 </div>
 

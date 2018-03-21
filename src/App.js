@@ -9,6 +9,7 @@ import Update from './Components/Admin/Update';
 import Explore from './Components/Explore';
 import Quiz from './Components/Quiz/Quiz';
 import About from './Components/About';
+import Footer from './Components/Footer';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path='/about' component={About} />
           </Switch>
         </BrowserRouter>
+        <Footer />
       </div>
     );
   }
