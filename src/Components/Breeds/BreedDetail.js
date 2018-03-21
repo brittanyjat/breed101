@@ -6,6 +6,7 @@ import MainHeader from '../Header/Header';
 import Photos from './Photos';
 import Genetics from './Genetics';
 import hypo from '../../assets/logo.png';
+import { Label } from 'semantic-ui-react';
 
 class BreedDetail extends Component {
     constructor(){
@@ -59,10 +60,19 @@ class BreedDetail extends Component {
                     <div className='tab-container'>
                         <hr />
                         <h2>{breed.name} Attributes</h2>
-                        { breed.hypoallergenic === true ? <img src={hypo} alt='hypoallergenic' className='hypo-badge'/> : null }
+                        { breed.hypoallergenic === true ?
+                            <div className='hypo-container'>
+                                <img src={hypo} alt='hypoallergenic' className='hypo-badge'/>
+                                <div className='hypo-description'>
+                                    <Label style={{margin: 'auto'}}>
+                                        This dog is more compatible with allergic people than other breeds.
+                                    </Label>
+                                </div>
+                            </div>
+                        : null }
+                        <br/>
                         <Tabs />
                     </div>
-
 
                     <div className='detail-container'>
                         <hr/>
