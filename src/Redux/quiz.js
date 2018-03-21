@@ -8,9 +8,9 @@ const initialState = {
     cats: false,
     dogs: false,
     children: false,
-    energy: 0,
+    energy: 100,
     affection: 0,
-    shedding: 0
+    shedding: 100
 }
 
 const _PENDING = '_PENDING';

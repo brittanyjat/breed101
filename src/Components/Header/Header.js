@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Search from './Search';
 import mobile from '../../assets/mobile.png';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import Hamburger from './Hamburger';
+import MobileLinks from './MobileLinks';
 
 class MainHeader extends Component {
     constructor() {
@@ -15,18 +17,24 @@ class MainHeader extends Component {
     }
 
     render() {
+        console.log(window)
         return (
             <div>
                 <div className='header'>
 
                     <div className='search-container'>
-                        <Icon name='content' size='large' />
+                        <div className='hamburger-main'>
+                            <Icon name='content' size='large' style={{cursor: 'pointer'}}
+                                onClick={() => this.setState({ showMenu: !this.state.showMenu, activeSearch: false })} />
+                            {this.state.showMenu ? <Hamburger /> : null}
+                        </div>
+
                         <div className='selection'>
                             {this.state.activeSearch ? <Search /> : null}
                             <Icon
                                 name='search'
                                 size='large'
-                                onClick={() => this.setState({ activeSearch: !this.state.activeSearch })} />
+                                onClick={() => this.setState({ activeSearch: !this.state.activeSearch, showMenu: false })} />
                         </div>
                     </div>
 
@@ -34,40 +42,26 @@ class MainHeader extends Component {
 
                         <div className='split-header-container'>
                             <Link to='/' className='header-link'>
-                                <span>Home</span>
+                                <Button size='small' basic  >Home</Button>
                             </Link>
                             <Link to='/about' className='header-link'>
-                                <span>About</span>
+                                <Button size='small' basic >About</Button>
                             </Link>
                         </div>
-                        
+
                         <img src={mobile} alt='logo' className='header-logo' />
 
                         <div className='split-header-container'>
                             <Link to='/explore' className='header-link'>
-                                <span>Explore</span>
+                                <Button size='small' basic >Explore</Button>
                             </Link>
                             <Link to='/quiz/step1' className='header-link'>
-                                <span>Matcher</span>
+                                <Button size='small' basic >Matcher</Button>
                             </Link>
                         </div>
                     </div>
 
-                    <div className='icon-container'>
-                        <Link to='/' className='header-link'>
-                            <span>Home</span>
-                        </Link>
-                        <Link to='/about' className='header-link'>
-                            <span>About</span>
-                        </Link>
-                        <Link to='/explore' className='header-link'>
-                            <span>Explore</span>
-                        </Link>
-                        <Link to='/quiz/step1' className='header-link'>
-                            <span>Matcher</span>
-                        </Link>
-                    </div>
-
+                    <MobileLinks />
                 </div>
             </div>
         )
