@@ -15,7 +15,6 @@ class MainHeader extends Component {
     }
 
     render() {
-        console.log(window)
         return (
             <div>
                 <div className='header'>
