@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express')
     , app = express()
     , bodyParser = require('body-parser')
-    , massive = require('massive');
+    , massive = require('massive')
+    , cors = require('cors');
     // , session = require('express-session')
     // , passport = require('passport')
     // , Auth0Strategy = require('passport-auth0');
@@ -15,6 +16,7 @@ const frontEnd = require('./Controllers/frontEnd');
 app.use(express.static(`${__dirname}/../build`));
 
 app.use(bodyParser.json());
+app.use(cors());
 
 // app.use(session({
 //     secret: SESSION_SECRET,
