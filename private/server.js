@@ -11,7 +11,6 @@ const { SERVER_PORT, CONNECTION_STRING, SUCCESS_REDIRECT, SESSION_SECRET, AUTH_D
 
 const breeds = require('./Controllers/breeds');
 const frontEnd = require('./Controllers/frontEnd');
-const checkAuth = require('./middleware/checkAuth');
 
 app.use(express.static(`${__dirname}/../build`));
 
@@ -54,14 +53,14 @@ app.use(bodyParser.json());
 
 
 app.get('/api/breedList', breeds.breedList);
-app.post('/api/new', checkAuth, breeds.new);
-app.get('/api/breed/:id', checkAuth, breeds.detail);
-app.delete('/api/breed/:id', checkAuth, breeds.delete);
+app.post('/api/new', breeds.new);
+app.get('/api/breed/:id', breeds.detail);
+app.delete('/api/breed/:id', breeds.delete);
 app.get('/api/all', breeds.all);
 app.put('/api/breed/:id', breeds.update);
 app.get('/api/photos/:id', frontEnd.photos);
 app.get('/api/spotlight', frontEnd.spotlight);
-app.get('/api/update/:id', checkAuth, breeds.getUpdate);
+app.get('/api/update/:id', breeds.getUpdate);
 app.put('/api/spotlight/:id', breeds.addSpotlight);
 app.get('/api/explore', frontEnd.explore);
 app.post('/api/quiz', frontEnd.quiz);
