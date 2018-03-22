@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <div>
             <h1>FOOTER</h1>
-            <a href={process.env.REACT_APP_LOGIN}><button>Admin</button></a>
+            {/* <a href={process.env.REACT_APP_LOGIN}><button>Admin</button></a> */}
         </div>
     )
 }
