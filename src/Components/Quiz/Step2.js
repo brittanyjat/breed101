@@ -13,13 +13,13 @@ class Step2 extends Component {
         return (
             <div className='quiz-container step-2'>
                 <h1>Find Your Perfect Breed</h1>
-                <h4>What size dog would you like? Select all that apply.</h4>
+                <h4>Select the largest ideal size.</h4>
                 <div className='size-select-container'>
                     <img src={small_dog} alt='small-dog' onClick={() => sizeSelector(25)} />
                     <div />
                     <img src={dog} alt='dog' onClick={() => sizeSelector(50)} />
                     <div />
-                    <img src={larg_dog} alt='large-dog' style={{ transform: 'scaleX(-1)', marginTop: '20px' }} onClick={() => sizeSelector(250)} />
+                    <img src={larg_dog} alt='large-dog' style={{ transform: 'scaleX(-1)', marginTop: '20px'}} onClick={() => sizeSelector(250)}/>
                 </div>
                 <Link to='/quiz/step3' >
                     <Button style={{ marginTop: '20px' }} size='huge'>Next Step</Button>

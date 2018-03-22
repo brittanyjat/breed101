@@ -15,7 +15,7 @@ export default function Hamburger() {
                 <span className='span'>Explore</span>
             </Link>
             <Link to='/quiz/step1' className='header-link'>
-                <span className='span'>Matcher</span>
+                <span className='span'>Wizard</span>
             </Link>
         </div>
     )
