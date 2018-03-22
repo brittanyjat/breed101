@@ -1,0 +1,50 @@
+.main-card-container {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-gap: 10px;
+}
+
+.card {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 26px 26px 44px -16px rgba(0,0,0,0.77);
+    border-radius: 50px;
+    h4 {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background-color: rgba(0, 0, 0, 0.4);
+        font-size: 18px;
+    }
+}
+
+.spotlight-name {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 80%;
+}
+
+@media (min-width:768px){
+    .main-card-container {
+        grid-template-columns: 350px 350px;
+    }
+    .card {
+        height: 250px;
+    }
+}
+
+@media (min-width:1120px){
+    .main-card-container {
+        grid-template-columns: 450px 450px;
+        grid-gap: 15px;
+    }
+    .card {
+        height: 350px;
+    }
+}

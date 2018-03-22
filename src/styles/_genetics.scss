@@ -1,0 +1,76 @@
+#genetic-main {
+    width: 100%;
+    min-height: 420px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: -webkit-linear-gradient(to bottom, #d7d2cc, #B8D8D6);
+    background: linear-gradient(to bottom, #d7d2cc, #B8D8D6);
+    box-shadow: 0px 0px 44px 0px rgba(136,160,158,1);
+}
+  
+.child {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.one, .two, .three {
+    border: 1px solid grey;
+}
+
+.pill {
+    height: 65%;
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+  
+  .one {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  .three {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  
+  .two {
+    width: 100%;
+  }
+  
+  .label {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: bold;
+    }
+  }
+
+  .dark {
+      background-color: #E9C22D;
+  }
+
+  .nofill {
+      background-color: #FCF7F8;
+  }
+
+  @media (max-width:768px){
+    .label, .pill {
+        span {
+            font-size: 8px;
+        }
+      }
+  }

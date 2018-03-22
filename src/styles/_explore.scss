@@ -1,0 +1,135 @@
+.explore-header {
+    margin: auto;
+    width: 95%;
+    min-height: 60px;
+    background-color: #F4F4F4;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.filter-header {
+    margin: auto;
+    padding-top: 10px;
+    min-height: 70px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    span {
+        margin-top: 15px;
+    }
+}
+
+.filter-container {
+    min-height: 100px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+        margin-top: 20px;
+    }
+}
+
+.filter-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.breed-explore-card {
+    height: 250px;
+    width: 250px;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 18px 0px rgba(136,160,158,1);
+    border-radius: 15px;
+}
+
+.breed-explore-card:hover {
+    box-shadow: 0px 0px 66px 0px rgb(6, 48, 44);
+}
+
+.explore-img {
+    width: 100%;
+    height: 85%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.explore-name {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+        text-align: center;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+
+.sort-container {
+    margin: auto;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    span {
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    select {
+        height: 30px;
+        margin-right: 10px;
+    }    
+    h1 {
+        text-transform: uppercase;
+    }
+}
+
+.sortby-container {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    select {
+        border: 1px solid gray;
+    }
+}
+
+.breed-container {
+    margin: auto;
+    max-width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (min-width:768px){
+    .sort-container {
+        width: 65%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .sortby-container {
+        width: 250px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

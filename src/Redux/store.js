@@ -1,5 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducer from './reducer';
 import reduxPromiseMiddleware from 'redux-promise-middleware';
+import reducer from './index';
 
-export default createStore(reducer, applyMiddleware(reduxPromiseMiddleware()));
+
+let store = createStore(reducer, applyMiddleware(reduxPromiseMiddleware()));
+// console.log(store.getState());
+
+export default store;

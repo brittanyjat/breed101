@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+.home-top {
+    display: grid;
+    grid-template-rows: 165px 165px 165px;
+    grid-gap: 3px;
+    div {
+        width: 100%;
+        h2, h3 {
+            color: white;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+    }
+}
+
+.explore-link {
+    background-image: url('https://images.unsplash.com/photo-1505843378597-b96befae716e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2fb08db6577ed6fa77c8e177f28051f0&auto=format&fit=crop&w=1950&q=80');
+}
+
+.first-link {
+    background-image: url('https://images.pexels.com/photos/65928/dog-nose-snout-munsterlander-65928.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+}
+
+.second-link {
+    background-image: url('https://images.unsplash.com/photo-1518680124613-901303d5cbf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d5dcf8135b05b96b0a75a4c1b8d2587&auto=format&fit=crop&w=1650&q=80');
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: opacity(80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2, h3 {
+        color: white;
+        text-transform: uppercase;
+        font-family: 'Lato', sans-serif;
+    }
+}
+
+.hero-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        font-size: 48px;
+        font-weight: 100;
+    }
+    h3 {
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: -2px;
+    }
+}
+
+.home-spotlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        text-align: center;
+        font-size: 32px;
+    }
+}
+
+.article-container {
+    width: 96%;
+    margin: auto;
+    display: grid;
+    grid-template: 300px 300px 300px 300px / 1fr;
+    grid-gap: 10px;
+    div {
+        border: 1px solid black;
+    }
+}
+
+.home-article {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,.6); // Tint color
+    background-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 100% rgba(36, 70, 105, 0.74);
+    h4 {
+        color: white;
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+
+@media (min-width:768px){
+    .home-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 350px;
+        }
+    .article-container {
+        grid-template: 300px 300px / 1fr 1fr;
+        }
+}
+
+.home-section {
+    margin-bottom: 75px;
+}
+
+.home-articles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        text-align: center;
+    }
+}

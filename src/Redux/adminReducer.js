@@ -33,39 +33,41 @@ const initialState = {
     grooming: null,
     shedding: null,
 
-    breedList: [],
     selected: null,
-    currentBreed: [],
+    breedList: [],
+    breedUpdate: [],
     loading: false
 }
 
 const UPDATE = 'UPDATE';
 const CLEARSTATE = 'CLEARSTATE';
-const GETBREEDS = 'GETBREEDS';
 const UPDATESELECTED = 'UPDATESELECTED';
 const DELETE_BREED = 'DELETE_BREED';
-const CURRENT_BREED = 'CURRENT_BREED';
 const _FULFILLED = '_FULFILLED';
-const _PENDING = 'PENDING';
+const _PENDING = '_PENDING';
+const GETBREEDS = 'GETBREEDS';
+const BREED_UPDATE = 'BREED_UPDATE';
 
-function reducer(state = initialState, action) {
-    // console.log(state);
+export default function adminReducer(state = initialState, action) {
     const { payload } = action;
     switch (action.type) {
+        case GETBREEDS + _PENDING:
+            return { ...state, loading: true }
+        case GETBREEDS + _FULFILLED:
+            return Object.assign({}, state, { breedList: payload })
         case UPDATE:
             return { ...state, [payload.prop]: payload.value }
         case CLEARSTATE:
-            return { ...state, initialState }
-        case GETBREEDS:
-            return Object.assign({}, state, { breedList: payload })
+            state = initialState
+            return state
         case UPDATESELECTED:
             return { ...state, selected: payload }
         case DELETE_BREED + _FULFILLED:
             return { ...state, breedList: payload }
-        case CURRENT_BREED + _PENDING:
+        case BREED_UPDATE + _PENDING:
             return { ...state, loading: true }
-        case CURRENT_BREED + _FULFILLED:
-            return { ...state, currentBreed: payload }
+        case BREED_UPDATE + _FULFILLED:
+            return { ...state, breedUpdate: payload }
         default:
             return state
     }
@@ -80,23 +82,7 @@ export function update(prop, value) {
 }
 
 export function clearState() {
-    return {
-        type: CLEARSTATE
-    }
-}
-
-export function getAll(breeds) {
-    return {
-        type: GETBREEDS,
-        payload: breeds
-    }
-}
-
-export function updateSelected(id) {
-    return {
-        type: UPDATESELECTED,
-        payload: id
-    }
+    return { type: CLEARSTATE }
 }
 
 export function deleteBreed(id) {
@@ -108,13 +94,26 @@ export function deleteBreed(id) {
     }
 }
 
-export function breedDetail(id) {
-    const promise = axios.get(`/api/breed/${id}`).then(res => res.data);
-
+export function getAll(breeds) {
+    const promise = axios.get('/api/all').then(res => res.data)
     return {
-        type: CURRENT_BREED,
+        type: GETBREEDS,
         payload: promise
     }
 }
 
-export default reducer;
+export function updateSelected(id) {
+    return {
+        type: UPDATESELECTED,
+        payload: id
+    }
+}
+
+export function updateBreed(id) {
+    const promise = axios.get(`/api/breed/${id}`).then(res => res.data);
+
+    return {
+        type: BREED_UPDATE,
+        payload: promise
+    }
+}
