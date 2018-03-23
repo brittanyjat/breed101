@@ -1,8 +1,7 @@
 module.exports = function (req, res, next) {
-    // console.log( passport.session )
-    // if (profile.Profile.nickname != 'brittanyjat') {
-    //     res.status(403).send('NOT ADMIN')
-    // } else {
-    //     next();
-    // }
+    if ( req.session.passport.user === 'Admin'){
+        next()
+    } else {
+        res.status(403).send('Must be Admin to access')
+    }
 }

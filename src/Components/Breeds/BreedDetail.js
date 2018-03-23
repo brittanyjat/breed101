@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { breedDetail } from '../../Redux/User';
+import { breedDetail, getPhotos } from '../../Redux/User';
 import Tabs from './Tabs';
 import MainHeader from '../Header/Header';
-import Photos from './Photos';
+// import Photos from './Photos';
 import Genetics from './Genetics';
 import hypo from '../../assets/logo.png';
 import { Label } from 'semantic-ui-react';
 
 class BreedDetail extends Component {
-    constructor(){
-        super();
-
-        this.state = {
-            photos: []
-        }
-    }
 
     componentWillMount() {
         const { id } = this.props.match.params;
@@ -24,7 +17,6 @@ class BreedDetail extends Component {
 
 
     render() {
-        console.log(window)
         var breed = this.props.currentBreed;
         
         var bgImg = {
@@ -78,7 +70,7 @@ class BreedDetail extends Component {
                     <div className='detail-container'>
                         <hr/>
                         <h2>{breed.name} Photos</h2>
-                        <Photos />
+                        {/* <Photos /> */}
                         <br/>
                     </div>
 
@@ -112,4 +104,4 @@ var mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { breedDetail })(BreedDetail);
+export default connect(mapStateToProps, { breedDetail, getPhotos })(BreedDetail);

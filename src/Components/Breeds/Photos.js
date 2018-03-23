@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { getPhotos } from '../../Redux/User';
+// import { getPhotos } from '../../Redux/User';
 
 class Photos extends Component {
     constructor() {
@@ -9,15 +9,14 @@ class Photos extends Component {
 
         this.state = {
             current: '',
-            time: 3000
+            time: 3500
         }
     }
 
     componentDidMount() {
-        const { id } = this.props.match.params;
-        this.props.getPhotos(id);
         this.changeImg();
     }
+
 
     changeImg(i = 0) {
         const { time } = this.state;
@@ -34,6 +33,7 @@ class Photos extends Component {
     }
 
     render() {
+        // console.log(this.props)
         return (
             <div className='photo-container'>
                 <img src={this.state.current} alt='breed' style={{height: '350px', margin: 'auto'}}/>
@@ -48,4 +48,4 @@ var mapStateToProps = (state) => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, { getPhotos })(Photos));
+export default withRouter(connect(mapStateToProps, null)(Photos));
