@@ -20,7 +20,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/breed/:id' component={BreedDetails} />
             <Route path='/add' exact component={AddNew} />
-            <Route path='/admin' exact component={AdminHome} />
+            <Route path='/#/admin' exact component={AdminHome} />
             <Route path='/update/:id' component={Update} />
             <Route path='/explore' component={Explore} />
             <Route path='/quiz' component={Quiz} />
