@@ -42,7 +42,6 @@ class Update extends Component {
 
     render() {
         const { affection, apartment, barking, cat, ceo, child, trait1, trait2, trait3, youtube, description, dog, energy, exercise, expectancy, grooming, health, height, intelligence, name, photo, playful, shedding, train, weight } = this.state.updates;
-        console.log(this.state)
         return (
             <div className='update-container'>
                 <div>

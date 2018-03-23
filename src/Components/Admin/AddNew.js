@@ -3,7 +3,7 @@ import { Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { update, clearState } from '../../Redux/adminReducer';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 class Admin extends Component {
 
@@ -40,7 +40,11 @@ class Admin extends Component {
             shedding: this.props.shedding
         }
         axios.post('/api/new', body).then(res => {
-            console.log(res)
+            if (res.status === 200 ){
+                window.location.reload()
+            } else {
+                console.log(res)
+            }
         })
 
     }
@@ -61,7 +65,6 @@ class Admin extends Component {
             <div style={styles}>
                 <div>
                     <img src={this.props.photo} alt='preview' style={imgStyle} />
-                    <Button type='submit' onClick={() => this.submitBreed()} >Submit</Button>
                 </div>
 
                 <div>
@@ -213,8 +216,9 @@ class Admin extends Component {
                                 <input placeholder='Shedding Level' onChange={(e) => update('shedding', e.target.value)} />
                             </Form.Field>
                         </div>
-
                     </Form>
+                    <Button type='submit' onClick={() => this.submitBreed()} >Submit</Button>
+                    <Link to='/admin'><Button>Admin Home</Button></Link>
                 </div>
             </div>
         )
