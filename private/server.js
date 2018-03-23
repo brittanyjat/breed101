@@ -6,7 +6,8 @@ const express = require('express')
     , cors = require('cors')
     , session = require('express-session')
     , passport = require('passport')
-    , Auth0Strategy = require('passport-auth0');
+    , Auth0Strategy = require('passport-auth0')
+    , path = require('path');
 
 const { SERVER_PORT, CONNECTION_STRING, SUCCESS_REDIRECT, SESSION_SECRET, AUTH_DOMAIN, AUTH_CLIENT_ID, AUTH_CLIENT_SECRET, AUTH_CALLBACK_URL } = process.env;
 
@@ -70,7 +71,9 @@ app.get('/api/update/:id', breeds.getUpdate);
 app.get('/api/explore', frontEnd.explore);
 app.post('/api/quiz', frontEnd.quiz);
 
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/../build'));
+});
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
