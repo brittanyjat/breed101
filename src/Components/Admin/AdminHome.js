@@ -7,7 +7,7 @@ export default class AdminHome extends Component {
         return (
             <div>
                 <div>
-                    <h2 className='breed-table-title'>BREEDS</h2>
+                    <h2 className='breed-table-title' style={{ height: '100px', width: '100%', backgroundColor: '#E9C22D' }}>Welcome Admin</h2>
                     <AllTable />
                 </div>
             </div>

@@ -23,7 +23,7 @@ class AllTable extends Component {
                 spotlight = breedList[i].spotlight
             }
         }
-        axios.put(`/api/spotlight/${selected}`, {spotlight}).then(res => {
+        axios.put(`/api/spotlight/${selected}`, { spotlight }).then(res => {
             this.props.updateSelected(null)
             this.props.getAll()
         })
