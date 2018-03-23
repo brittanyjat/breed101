@@ -115,6 +115,10 @@
     align-items: center;
 }
 
+.slider-list {
+    min-height: 250px; 
+  }
+
 @media (min-width: 740px){
     .intro-section {
         margin-top: 40px;

@@ -12,15 +12,18 @@ export default class Home extends Component {
             <div>
                 <MainHeader />
                 <div className='home-top home-section'>
-                    <Modal basic trigger={
-                        <div className='first-link hero'>
-                            <div className='hero-single'>
-                                <h2>Selecting</h2>
-                                <h3>Your Breed</h3>
-                            </div>
-                        </div>}>
+                    <Modal 
+                        closeOnDocumentClick={true}
+                        size='tiny'
+                        trigger={
+                            <div className='first-link hero'>
+                                <div className='hero-single'>
+                                    <h2>Selecting</h2>
+                                    <h3>Your Breed</h3>
+                                </div>
+                            </div>}>
                         <Modal.Header>Importance Of Selecting The Right Breed</Modal.Header>
-                        <Modal.Content>
+                        <Modal.Content image>
                             <iframe id='ytplayer' type='text/html' width="420" height="315" title='info'
                                 src="https://www.youtube.com/embed/ASxkyQKZE4k">
                             </iframe>
