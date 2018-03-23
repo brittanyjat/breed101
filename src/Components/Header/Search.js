@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router';
 import Select from 'react-select';
-// import { browserHistory } from 'react-router';
+import { connect } from 'react-redux';
+import { breedDetail } from '../../Redux/User';
 
 import 'react-select/dist/react-select.css';
 
@@ -18,9 +18,8 @@ class Search extends Component {
     }
 
     handleChange(selectedOption) {
-        const { history } = this.props;
-        history.push(`/breed/${selectedOption.value}`).go();
-        // history.replace(`/breed/${selectedOption.value}`)
+        const { breedDetail } = this.props;
+        breedDetail(selectedOption.value)
     }
 
     componentDidMount() {
@@ -30,9 +29,10 @@ class Search extends Component {
     }
 
     render() {
+        console.log(this.props.history)
         const { selectedOption } = this.state;
         return (
-            <div style={{width: '250px'}} className='search-main'>
+            <div style={{ width: '250px' }} className='search-main'>
                 <Select
                     name='breed-search'
                     value={selectedOption.value}
@@ -44,4 +44,4 @@ class Search extends Component {
     }
 }
 
-export default withRouter(Search);
+export default connect(null, { breedDetail })(Search);

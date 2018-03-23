@@ -12,6 +12,7 @@ const GET_PHOTOS = 'GET_PHOTOS';
 const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
 const GET_SPOTLIGHT = 'GET_SPOTLIGHT';
+
 export default function user(state = userState, action) {
     const { payload } = action;
     switch (action.type) {

@@ -14,7 +14,7 @@ class Results extends Component {
         const { matched } = this.props;
         const matches = matched.map((breed, i) => {
             return (
-                <Link to={`/breed/${breed.id}`} key={i} rel="noopener noreferrer" target="_blank">
+                <Link to={`/breed/${breed.id}`} key={i} >
                     <div className='breed-explore-card'>
                         <div className='explore-img' style={{ backgroundImage: `url(${breed.photo})` }}></div>
                         <div className='explore-name'><h3>{breed.name}</h3></div>

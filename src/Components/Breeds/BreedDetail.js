@@ -17,10 +17,11 @@ class BreedDetail extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const { id } = this.props.match.params;
         this.props.breedDetail(id);
     }
+
 
     render() {
         console.log(window)

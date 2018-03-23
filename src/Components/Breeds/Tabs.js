@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class Tabs extends Component {
     render() {
-        const { apartment, cat, dog, child, exercise, grooming, shedding, health, intelligence, affection, barking, playful } = this.props;
+        const { apartment, cat, dog, child, exercise, grooming, shedding, health, intelligence, affection, train, playful } = this.props;
 
         const panes = [
             {
@@ -14,8 +14,8 @@ class Tabs extends Component {
                         <Progress percent={intelligence || 0} color='yellow' progress />
                         <h3>Affection Level</h3>
                         <Progress percent={affection || 0} color='yellow' progress />
-                        <h3>Barking Tendencies</h3>
-                        <Progress percent={barking || 0} color='yellow' progress />
+                        <h3>Trainability</h3>
+                        <Progress percent={train || 0} color='yellow' progress />
                         <h3>Playfulness</h3>
                         <Progress percent={playful || 0} color='yellow' progress />
                     </Tab.Pane>
@@ -68,7 +68,8 @@ var mapStateToProps = (state) => {
         intelligence: state.user.currentBreed.intelligence,
         barking: state.user.currentBreed.barking,
         affection: state.user.currentBreed.affection,
-        playful: state.user.currentBreed.playful
+        playful: state.user.currentBreed.playful,
+        train: state.user.currentBreed.train
     }
 }
 
