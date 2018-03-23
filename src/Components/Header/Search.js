@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router';
 import Select from 'react-select';
+// import { browserHistory } from 'react-router';
 
 import 'react-select/dist/react-select.css';
 
@@ -20,7 +21,7 @@ class Search extends Component {
         const { history } = this.props;
         history.push(`/breed/${selectedOption.value}`)
         // history.replace(`/breed/${selectedOption.value}`)
-        // history.go()
+        history.go()
     }
 
     componentDidMount() {
