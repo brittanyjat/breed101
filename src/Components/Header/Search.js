@@ -19,9 +19,8 @@ class Search extends Component {
 
     handleChange(selectedOption) {
         const { history } = this.props;
-        history.push(`/breed/${selectedOption.value}`)
+        history.push(`/breed/${selectedOption.value}`).go();
         // history.replace(`/breed/${selectedOption.value}`)
-        history.go()
     }
 
     componentDidMount() {
