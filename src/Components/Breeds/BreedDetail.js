@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { breedDetail, getPhotos } from '../../Redux/User';
 import Tabs from './Tabs';
 import MainHeader from '../Header/Header';
-// import Photos from './Photos';
+import Photos from './Photos';
 import Genetics from './Genetics';
 import hypo from '../../assets/logo.png';
 import { Label } from 'semantic-ui-react';
@@ -13,11 +13,13 @@ class BreedDetail extends Component {
     componentWillMount() {
         const { id } = this.props.match.params;
         this.props.breedDetail(id);
+        this.props.getPhotos(id);
     }
 
 
     render() {
         var breed = this.props.currentBreed;
+        const { id } = this.props.match.params;
         
         var bgImg = {
             backgroundImage: `url(${breed.photo})`
@@ -70,7 +72,7 @@ class BreedDetail extends Component {
                     <div className='detail-container'>
                         <hr/>
                         <h2>{breed.name} Photos</h2>
-                        {/* <Photos /> */}
+                        <Photos />
                         <br/>
                     </div>
 

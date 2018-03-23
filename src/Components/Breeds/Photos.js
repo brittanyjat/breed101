@@ -1,42 +1,53 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-// import { getPhotos } from '../../Redux/User';
+import Carousel from 'nuka-carousel';
 
 class Photos extends Component {
-    constructor() {
-        super();
+    // constructor() {
+    //     super();
 
-        this.state = {
-            current: '',
-            time: 3500
-        }
-    }
+    //     this.state = {
+    //         current: '',
+    //         time: 3500
+    //     }
+    // }
 
-    componentDidMount() {
-        this.changeImg();
-    }
+    // componentWillMount() {
+    //     this.changeImg();
+    // }
 
 
-    changeImg(i = 0) {
-        const { time } = this.state;
-        const { photos } = this.props;
+    // changeImg(i = 0) {
+    //     const { time } = this.state;
+    //     const { photos } = this.props;
 
-        this.setState({ current: photos[i] })
+    //     this.setState({ current: photos[i] })
 
-        if (i < photos.length - 1) {
-            i++;
-        } else {
-            i = 0;
-        }
-        setTimeout(() => this.changeImg(i), time);
-    }
+    //     if (i < photos.length - 1) {
+    //         i++;
+    //     } else {
+    //         i = 0;
+    //     }
+    //     setTimeout(() => this.changeImg(i), time);
+    // }
 
     render() {
-        // console.log(this.props)
+        const { photos } = this.props;
+        const carouselOptions = photos.map((pic, i) => {
+            return (
+                <img src={pic} key={i} alt='breed'/>
+            )
+        })
         return (
             <div className='photo-container'>
-                <img src={this.state.current} alt='breed' style={{height: '350px', margin: 'auto'}}/>
+                <Carousel
+                    autoplay={true}
+                    cellAlign='center'
+                    renderBottomCenterControls={false}
+                >
+                    {carouselOptions}
+                </Carousel>
             </div>
         )
     }
