@@ -16,10 +16,8 @@ class BreedDetail extends Component {
         this.props.getPhotos(id);
     }
 
-
     render() {
         var breed = this.props.currentBreed;
-        const { id } = this.props.match.params;
         
         var bgImg = {
             backgroundImage: `url(${breed.photo})`

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Select from 'react-select';
 import { connect } from 'react-redux';
-import { breedDetail } from '../../Redux/User';
+import { breedDetail, getPhotos } from '../../Redux/User';
 import { withRouter } from 'react-router';
 
 import 'react-select/dist/react-select.css';
@@ -19,9 +19,10 @@ class Search extends Component {
     }
 
     handleChange(selectedOption) {
-        const { breedDetail, history } = this.props;
-        breedDetail(selectedOption.value)
-        history.push(`/breed/${selectedOption.value}`)
+        const { breedDetail, history, getPhotos } = this.props;
+        getPhotos(selectedOption.value)
+        breedDetail(selectedOption.value);
+        history.push(`/breed/${selectedOption.value}`);
     }
 
     componentDidMount() {
@@ -46,4 +47,4 @@ class Search extends Component {
     }
 }
 
-export default withRouter(connect(null, { breedDetail })(Search));
+export default withRouter(connect(null, { breedDetail, getPhotos })(Search));

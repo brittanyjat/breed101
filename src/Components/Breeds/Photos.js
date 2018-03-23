@@ -36,7 +36,7 @@ class Photos extends Component {
         const { photos } = this.props;
         const carouselOptions = photos.map((pic, i) => {
             return (
-                <img src={pic} key={i} alt='breed'/>
+                <img src={pic} key={i} alt='breed' />
             )
         })
         return (
@@ -55,7 +55,8 @@ class Photos extends Component {
 
 var mapStateToProps = (state) => {
     return {
-        photos: state.user.photos
+        photos: state.user.photos,
+        loading: state.user.loading
     }
 }
 
