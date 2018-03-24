@@ -68,7 +68,7 @@
 .tab-container {
     width: 90%;
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     h2 {
         text-align: center;
     }
@@ -87,12 +87,30 @@
 }
 
 .detail-container {
-    width: 55%;
+    width: 100%;
     margin: auto;
-    margin-top: 40px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 91%);
     h2 {
         text-align: center;
     }
+}
+
+.genetics {
+    background-color: #88A09E;
+}
+
+// .photos {
+//     background-color: #2E4057;
+// }
+
+// .videos {
+//     background-color: #3CB18B;
+// }
+
+.tabs {
+    background-color: #E9C22D;
 }
 
 .video-wrapper {
@@ -110,6 +128,8 @@
 }
 
 .photo-container {
+    width: 60%;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -11,13 +11,13 @@ class Tabs extends Component {
                 menuItem: 'Characteristics', render: () =>
                     <Tab.Pane attached={false}>
                         <h3>Intelligence</h3>
-                        <Progress percent={intelligence || 0} color='yellow' progress />
+                        <Progress percent={intelligence || 0} color='orange' progress />
                         <h3>Affection Level</h3>
-                        <Progress percent={affection || 0} color='yellow' progress />
+                        <Progress percent={affection || 0} color='orange' progress />
                         <h3>Trainability</h3>
-                        <Progress percent={train || 0} color='yellow' progress />
+                        <Progress percent={train || 0} color='orange' progress />
                         <h3>Playfulness</h3>
-                        <Progress percent={playful || 0} color='yellow' progress />
+                        <Progress percent={playful || 0} color='orange' progress />
                     </Tab.Pane>
             },
 

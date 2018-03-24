@@ -50,8 +50,8 @@ class BreedDetail extends Component {
                         <br />
                     </div>
 
+                    <div className='detail-container tabs'>
                     <div className='tab-container'>
-                        <hr />
                         <h2>{breed.name} Attributes</h2>
                         { breed.hypoallergenic === true ?
                             <div className='hypo-container'>
@@ -66,30 +66,30 @@ class BreedDetail extends Component {
                         <br/>
                         <Tabs />
                     </div>
+                    </div>
 
-                    <div className='detail-container'>
-                        <hr/>
+                    <div className='detail-container photos'>
                         <h2>{breed.name} Photos</h2>
                         <Photos />
                         <br/>
                     </div>
 
-                    <div className='detail-container'>
-                        <hr/>
+                    <div className='detail-container genetics'>
                         <h2>{breed.name} Genetics*</h2>
                         <Genetics props={genetics}/>
-                        <h6>* based on median for breed</h6>
+                        <h6 style={{textAlign: 'center'}}>* based on median for breed</h6>
                         <br />
                     </div>
 
-                    <div className='detail-container'>
-                        <hr/>
+                    <div className='detail-container videos'>
                         <h2>{breed.name} Videos</h2>
-                        <div className='video-wrapper'>
-                            <iframe
-                            title='detailed-info'
-                            src={`https://www.youtube.com/embed/${breed.youtube}`}>
-                            </iframe>
+                        <div style={{width: '60%', margin: 'auto'}}>
+                            <div className='video-wrapper'>
+                                <iframe
+                                title='detailed-info'
+                                src={`https://www.youtube.com/embed/${breed.youtube}`}>
+                                </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
