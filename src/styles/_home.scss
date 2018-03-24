@@ -96,6 +96,29 @@
     }
 }
 
+.about-bottom {
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2, h4, h5, p, ul, li {
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
+    }
+}
+
+.about-list {
+    margin: auto;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
 
 @media (min-width:768px){
     .home-top {
