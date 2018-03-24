@@ -3,7 +3,7 @@
     margin-top: 50px;
     margin-bottom: 100px;
     width: 65%;
-    background-color: #E9C22D;
+    background-color: #3CB18B;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,6 +53,11 @@
     .h3 {
         font-size: 12px;
     }
+}
+
+.selected-size {
+    border: solid 3px white;
+    padding: 10px;
 }
 
 .radio-container {

@@ -13,6 +13,7 @@ export default class Home extends Component {
                 <MainHeader />
                 <div className='home-top home-section'>
                     <Modal 
+                        closeOnDimmerClick={true}
                         closeOnDocumentClick={true}
                         size='tiny'
                         trigger={
@@ -23,7 +24,7 @@ export default class Home extends Component {
                                 </div>
                             </div>}>
                         <Modal.Header>Importance Of Selecting The Right Breed</Modal.Header>
-                        <Modal.Content image>
+                        <Modal.Content >
                             <iframe id='ytplayer' type='text/html' width="420" height="315" title='info'
                                 src="https://www.youtube.com/embed/ASxkyQKZE4k">
                             </iframe>

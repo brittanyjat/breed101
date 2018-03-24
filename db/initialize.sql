@@ -1,6 +1,6 @@
 CREATE TABLE breeds (
 id SERIAL PRIMARY KEY,
-name VARCHAR(25),
+name VARCHAR(100),
 photo VARCHAR(250)
 )
 
