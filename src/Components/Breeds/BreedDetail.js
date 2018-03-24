@@ -21,8 +21,10 @@ class BreedDetail extends Component {
         var breed = this.props.currentBreed;
         
         var bgImg = {
-            backgroundImage: `url(${breed.photo})`
+            backgroundImage: `url(${breed.photo})`,
+            height: '110vh'
         }
+
         var genetics = {
             energy: breed.energy,
             expected: breed.expectancy,

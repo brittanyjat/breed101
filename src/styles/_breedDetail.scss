@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Lobster|Rozha+One');
 
 .breed-top-section {
-    height: 50vh;
     width: 100vw;
     background-size: cover;
     background-position: top;
@@ -32,13 +31,14 @@
     justify-content: space-around;
     span {
         color: white;
-        font-size: 13px;
+        font-size: 14px;
         font-family: 'Rozha One', serif;
         font-style: italic;
         letter-spacing: 1px;
         text-transform: lowercase;
-        text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
-
+        text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 0.15);
+        padding: 10px;
     }
 }
 

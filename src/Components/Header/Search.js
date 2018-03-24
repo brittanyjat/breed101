@@ -33,7 +33,6 @@ class Search extends Component {
     }
 
     render() {
-        // console.log(this.props.history)
         const { selectedOption } = this.state;
         return (
             <div style={{ width: '250px' }} className='search-main'>

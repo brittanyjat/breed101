@@ -36,7 +36,7 @@ class Photos extends Component {
         const { photos } = this.props;
         const carouselOptions = photos.map((pic, i) => {
             return (
-                <img src={pic} key={i} alt='breed' />
+                <img src={pic} key={i} alt='breed' style={{maxHeight: '90%'}}/>
             )
         })
         return (
