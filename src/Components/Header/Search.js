@@ -23,6 +23,7 @@ class Search extends Component {
         getPhotos(selectedOption.value)
         breedDetail(selectedOption.value);
         history.push(`/breed/${selectedOption.value}`);
+        window.scrollTo(0,250);
     }
 
     componentDidMount() {

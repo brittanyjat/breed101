@@ -14,6 +14,7 @@ class BreedDetail extends Component {
         const { id } = this.props.match.params;
         this.props.breedDetail(id);
         this.props.getPhotos(id);
+        window.scrollTo(0,250)
     }
 
     render() {
