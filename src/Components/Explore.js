@@ -78,7 +78,13 @@ class Explore extends Component {
                 <div className='explore-header'>
                     <div className='filter-header'>
                         <span>{breedExplore.length} results</span>
-                        <span>Advanced Filters <Icon name='filter' onClick={() => this.setState({ showFilters: !this.state.showFilters })} /></span>
+                        <span>
+                            Advanced Filters 
+                            <Icon 
+                                name='filter' 
+                                style={{cursor: 'pointer'}}
+                                onClick={() => this.setState({ showFilters: !this.state.showFilters })} />
+                        </span>
                     </div>
                     <div className={showFilters ? 'filter-container' : 'hidden'}>
                         <h3>Filter By</h3>

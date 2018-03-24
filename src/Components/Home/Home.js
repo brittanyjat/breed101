@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import MainHeader from '../Header/Header';
 import Spotlight from './Spotlight';
 import { Link } from 'react-router-dom';
-import { Modal } from 'semantic-ui-react';
-
 
 export default class Home extends Component {
 
@@ -12,24 +10,13 @@ export default class Home extends Component {
             <div>
                 <MainHeader />
                 <div className='home-top home-section'>
-                    <Modal 
-                        closeOnDimmerClick={true}
-                        closeOnDocumentClick={true}
-                        size='tiny'
-                        trigger={
-                            <div className='first-link hero'>
-                                <div className='hero-single'>
-                                    <h2>Selecting</h2>
-                                    <h3>Your Breed</h3>
-                                </div>
-                            </div>}>
-                        <Modal.Header>Importance Of Selecting The Right Breed</Modal.Header>
-                        <Modal.Content >
-                            <iframe id='ytplayer' type='text/html' width="420" height="315" title='info'
-                                src="https://www.youtube.com/embed/ASxkyQKZE4k">
-                            </iframe>
-                        </Modal.Content>
-                    </Modal>
+
+                    <a href='https://www.youtube.com/watch?v=ASxkyQKZE4k' target="_blank" rel="noopener noreferrer" className='first-link hero'>
+                        <div className='hero-single'>
+                            <h2>Selecting</h2>
+                            <h3>Your Breed</h3>
+                        </div>
+                    </a>
 
                     <div className='second-link hero'>
                         <Link to='/quiz/step1'>
