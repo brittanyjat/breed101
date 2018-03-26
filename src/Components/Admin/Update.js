@@ -36,8 +36,8 @@ class Update extends Component {
         const { updates } = this.state;
 
         axios.put(`/api/breed/${id}`, updates).then(res => {
-            this.propd.updateSelected(null)
-            this.props.history.push('/admin')
+            this.props.updateSelected(null);
+            this.props.history.push('/admin');
         })
     }
 
