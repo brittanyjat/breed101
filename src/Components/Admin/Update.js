@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Table } from 'semantic-ui-react';
+import { Table, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateBreed, updateSelected } from '../../Redux/adminReducer';
 import axios from 'axios';
@@ -207,7 +208,10 @@ class Update extends Component {
                             </Table.Row>
                         </Table.Body>
                     </Table>
-                    <button onClick={() => this.submitChange()}>Submit Change</button>
+                    <div className='admin-buttons'>
+                    <Button color='green' onClick={() => this.submitChange()}>Submit Change</Button>
+                    <Link to='/admin'><Button color='blue'>Admin Home</Button></Link>
+                    </div>
                 </div>
             </div>
         )

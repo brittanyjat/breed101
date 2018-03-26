@@ -40,7 +40,7 @@ class Admin extends Component {
             shedding: this.props.shedding
         }
         axios.post('/api/new', body).then(res => {
-            if (res.status === 200 ){
+            if (res.status === 200) {
                 window.location.reload()
             } else {
                 console.log(res)
@@ -217,8 +217,10 @@ class Admin extends Component {
                             </Form.Field>
                         </div>
                     </Form>
-                    <Button type='submit' onClick={() => this.submitBreed()} >Submit</Button>
-                    <Link to='/admin'><Button>Admin Home</Button></Link>
+                    <div className='admin-buttons'>
+                        <Button type='submit' color='green' onClick={() => this.submitBreed()} >Submit</Button>
+                        <Link to='/admin'><Button color='blue'>Admin Home</Button></Link>
+                    </div>
                 </div>
             </div>
         )
