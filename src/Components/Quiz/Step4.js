@@ -21,7 +21,7 @@ class Step4 extends Component {
                 </div>
 
                 <div className='question-container'>
-                    <span className='h3'>Minimum Affection Level</span>
+                    <span className='h3'>Minimum Affection Level Needed</span>
                     <div>{affection}</div>
                     <input type='range' min={0} max={100} value={affection} onChange={(e) => updateAffection(e.target.value)} />
                     <br />

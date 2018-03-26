@@ -14,7 +14,8 @@ class Results extends Component {
         const { matched } = this.props;
         const matches = matched.map((breed, i) => {
             return (
-                <Link to={`/breed/${breed.id}`} key={i}>
+                <Link
+                    to={`/breed/${breed.id}`} key={i}>
                     <div className='breed-explore-card'>
                         <div className='explore-img' style={{ backgroundImage: `url(${breed.photo})` }}></div>
                         <div className='explore-name'><h3>{breed.name}</h3></div>
@@ -24,16 +25,16 @@ class Results extends Component {
         })
 
         return (
-                <div className='quiz-container results-container'>
-                    <h1>Quiz Results</h1>
+            <div className='quiz-container results-container'>
+                <h1>Quiz Results</h1>
 
-                    <Link to='/quiz/step1'>
-                        <Button size='tiny'>Retake Quiz</Button>
-                    </Link>
-                    <div className='breed-container'>
-                        {matches}
-                    </div>
+                <Link to='/quiz/step1'>
+                    <Button size='tiny'>Retake Quiz</Button>
+                </Link>
+                <div className='breed-container'>
+                    {matches}
                 </div>
+            </div>
         )
     }
 }

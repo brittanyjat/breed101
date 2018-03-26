@@ -4,19 +4,18 @@ import Spotlight from './Spotlight';
 import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
-
     render() {
         return (
             <div>
                 <MainHeader />
                 <div className='home-top home-section'>
 
-                    <a href='https://www.youtube.com/watch?v=ASxkyQKZE4k' target="_blank" rel="noopener noreferrer" className='first-link hero'>
-                        <div className='hero-single'>
+                    <div className='first-link hero'>
+                        <div className='hero-single' onClick={() => window.open('https://www.youtube.com/watch?v=ASxkyQKZE4k')}>
                             <h2>Selecting</h2>
                             <h3>Your Breed</h3>
                         </div>
-                    </a>
+                    </div>
 
                     <div className='second-link hero'>
                         <Link to='/quiz/step1'>
@@ -41,7 +40,7 @@ export default class Home extends Component {
                 <br />
 
                 <div className='home-spotlight home-section'>
-                    <h1>Breeds of the Month</h1>
+                    <h1>Breed Spotlight</h1>
                     <Spotlight history={this.props.history} />
                     <br />
                     <hr width='75%' />
