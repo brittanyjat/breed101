@@ -22,7 +22,6 @@ class Update extends Component {
         });
     }
 
-
     handleInput(prop, value) {
         this.setState(prevState => ({
             updates: {
