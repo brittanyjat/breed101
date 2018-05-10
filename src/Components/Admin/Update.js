@@ -12,7 +12,6 @@ class Update extends Component {
         this.state = {
             updates: []
         }
-        this.handleInput = this.handleInput.bind(this);
     }
 
     componentDidMount() {
