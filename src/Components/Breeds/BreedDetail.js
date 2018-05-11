@@ -71,11 +71,11 @@ class BreedDetail extends Component {
                     </div>
                     </div>
 
-                    <div className='detail-container photos'>
+                    {/* <div className='detail-container photos'>
                         <h2>{breed.name} Photos</h2>
                         <Photos />
                         <br/>
-                    </div>
+                    </div> */}
 
                     <div className='detail-container genetics'>
                         <h2>{breed.name} Genetics*</h2>
